@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D5DE1E66C6B200CB9EEF /* FTTabbarContrller.swift */; };
+		D325D5E51E66D73D00CB9EEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */; };
+		D325D5E71E66DA5D00CB9EEF /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D325D5E61E66DA5D00CB9EEF /* Home.xcassets */; };
 		D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F71E6030E20059E665 /* AppDelegate.swift */; };
 		D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F91E6030E20059E665 /* ViewController.swift */; };
 		D340A6FD1E6030E20059E665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D340A6FB1E6030E20059E665 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D325D5DE1E66C6B200CB9EEF /* FTTabbarContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTabbarContrller.swift; sourceTree = "<group>"; };
+		D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D325D5E61E66DA5D00CB9EEF /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
 		D340A6F41E6030E20059E665 /* FaceTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D340A6F71E6030E20059E665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D340A6F91E6030E20059E665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D325D5DB1E66C63A00CB9EEF /* Shelf */ = {
+			isa = PBXGroup;
+			children = (
+				D325D5DE1E66C6B200CB9EEF /* FTTabbarContrller.swift */,
+			);
+			path = Shelf;
+			sourceTree = "<group>";
+		};
+		D325D5E31E66D71D00CB9EEF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */,
+				D325D5E61E66DA5D00CB9EEF /* Home.xcassets */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		D340A6EB1E6030E20059E665 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +125,8 @@
 				D340A6F71E6030E20059E665 /* AppDelegate.swift */,
 				D340A6F91E6030E20059E665 /* ViewController.swift */,
 				D340A6FB1E6030E20059E665 /* Main.storyboard */,
+				D325D5E31E66D71D00CB9EEF /* Home */,
+				D325D5DB1E66C63A00CB9EEF /* Shelf */,
 				D340A7011E6030E20059E665 /* Assets.xcassets */,
 				D340A7031E6030E20059E665 /* LaunchScreen.storyboard */,
 				D340A7061E6030E20059E665 /* Info.plist */,
@@ -238,6 +263,7 @@
 			files = (
 				D340A7051E6030E20059E665 /* LaunchScreen.storyboard in Resources */,
 				D340A7021E6030E20059E665 /* Assets.xcassets in Resources */,
+				D325D5E71E66DA5D00CB9EEF /* Home.xcassets in Resources */,
 				D340A6FD1E6030E20059E665 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D325D5E51E66D73D00CB9EEF /* HomeViewController.swift in Sources */,
 				D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */,
+				D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */,
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
 				D340A7001E6030E20059E665 /* FaceTube.xcdatamodeld in Sources */,
 			);
