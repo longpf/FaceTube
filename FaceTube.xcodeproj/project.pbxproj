@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D301153D1E68245000829A34 /* FTHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301153C1E68245000829A34 /* FTHTTPClient.swift */; };
 		D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D5DE1E66C6B200CB9EEF /* FTTabbarContrller.swift */; };
 		D325D5E51E66D73D00CB9EEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */; };
 		D325D5E71E66DA5D00CB9EEF /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D325D5E61E66DA5D00CB9EEF /* Home.xcassets */; };
+		D325D5EC1E67C2DF00CB9EEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5EB1E67C2DF00CB9EEF /* AudioToolbox.framework */; };
+		D325D5EE1E67C89B00CB9EEF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5ED1E67C89B00CB9EEF /* AVFoundation.framework */; };
+		D325D5F01E67C8A300CB9EEF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5EF1E67C8A300CB9EEF /* CoreMedia.framework */; };
+		D325D5F21E67C8B100CB9EEF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5F11E67C8B100CB9EEF /* CoreVideo.framework */; };
+		D325D5F41E67C90400CB9EEF /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5F31E67C90400CB9EEF /* libbz2.tbd */; };
+		D325D5F61E67C90D00CB9EEF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5F51E67C90D00CB9EEF /* libz.tbd */; };
+		D325D5F81E67C91700CB9EEF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5F71E67C91700CB9EEF /* MediaPlayer.framework */; };
+		D325D5FA1E67C92200CB9EEF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5F91E67C92200CB9EEF /* MobileCoreServices.framework */; };
+		D325D5FC1E67C92800CB9EEF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5FB1E67C92800CB9EEF /* OpenGLES.framework */; };
+		D325D5FE1E67C93100CB9EEF /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5FD1E67C93100CB9EEF /* VideoToolbox.framework */; };
 		D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F71E6030E20059E665 /* AppDelegate.swift */; };
 		D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F91E6030E20059E665 /* ViewController.swift */; };
 		D340A6FD1E6030E20059E665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D340A6FB1E6030E20059E665 /* Main.storyboard */; };
@@ -18,6 +29,23 @@
 		D340A7051E6030E20059E665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D340A7031E6030E20059E665 /* LaunchScreen.storyboard */; };
 		D340A7101E6030E30059E665 /* FaceTubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A70F1E6030E30059E665 /* FaceTubeTests.swift */; };
 		D340A71B1E6030E30059E665 /* FaceTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A71A1E6030E30059E665 /* FaceTubeUITests.swift */; };
+		D37216501E6FE0310098A907 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; };
+		D37216511E6FE05E0098A907 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; };
+		D37216521E6FE05E0098A907 /* IJKMediaFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D37216541E6FE1F80098A907 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D37216531E6FE1F80098A907 /* libc++.tbd */; };
+		D372165B1E70F4680098A907 /* FTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372165A1E70F4680098A907 /* FTViewController.swift */; };
+		D372165D1E70F4810098A907 /* FTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372165C1E70F4810098A907 /* FTView.swift */; };
+		D372165F1E70F4FC0098A907 /* FTTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372165E1E70F4FC0098A907 /* FTTableView.swift */; };
+		D37216611E70F50B0098A907 /* FTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216601E70F50B0098A907 /* FTTableViewCell.swift */; };
+		D37216631E70F5200098A907 /* FTArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216621E70F5200098A907 /* FTArray.swift */; };
+		D37216651E70F52F0098A907 /* FTMutableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216641E70F52F0098A907 /* FTMutableArray.swift */; };
+		D37216671E70F5410098A907 /* FTDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216661E70F5410098A907 /* FTDictionary.swift */; };
+		D37216691E70F5600098A907 /* FTMutableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216681E70F5600098A907 /* FTMutableDictionary.swift */; };
+		D372166B1E7124A30098A907 /* FTIJKPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372166A1E7124A30098A907 /* FTIJKPlayerController.swift */; };
+		D37216701E7125A80098A907 /* FTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372166F1E7125A80098A907 /* FTModel.swift */; };
+		D37216721E7128140098A907 /* FTHomeLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216711E7128140098A907 /* FTHomeLiveModel.swift */; };
+		D37216741E7128A00098A907 /* FTDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216731E7128A00098A907 /* FTDataSource.swift */; };
+		FBAEC164427E09B129F9D94E /* Pods_FaceTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 854F032D28A932DD74EE96DF /* Pods_FaceTube.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +65,38 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D3CB8F7A1E6D359700434A17 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D37216521E6FE05E0098A907 /* IJKMediaFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		041DB04E7ED3876EBB08EFD3 /* Pods-FaceTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceTube.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceTube/Pods-FaceTube.release.xcconfig"; sourceTree = "<group>"; };
+		854F032D28A932DD74EE96DF /* Pods_FaceTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D301153C1E68245000829A34 /* FTHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHTTPClient.swift; sourceTree = "<group>"; };
+		D30115401E691EA500829A34 /* FaceTube-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceTube-Bridging-Header.h"; sourceTree = "<group>"; };
 		D325D5DE1E66C6B200CB9EEF /* FTTabbarContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTabbarContrller.swift; sourceTree = "<group>"; };
 		D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D325D5E61E66DA5D00CB9EEF /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
+		D325D5EB1E67C2DF00CB9EEF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D325D5ED1E67C89B00CB9EEF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D325D5EF1E67C8A300CB9EEF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D325D5F11E67C8B100CB9EEF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D325D5F31E67C90400CB9EEF /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		D325D5F51E67C90D00CB9EEF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D325D5F71E67C91700CB9EEF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D325D5F91E67C92200CB9EEF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D325D5FB1E67C92800CB9EEF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D325D5FD1E67C93100CB9EEF /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		D340A6F41E6030E20059E665 /* FaceTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D340A6F71E6030E20059E665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D340A6F91E6030E20059E665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +111,21 @@
 		D340A7161E6030E30059E665 /* FaceTubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceTubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D340A71A1E6030E30059E665 /* FaceTubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTubeUITests.swift; sourceTree = "<group>"; };
 		D340A71C1E6030E30059E665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		D37216531E6FE1F80098A907 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D372165A1E70F4680098A907 /* FTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTViewController.swift; sourceTree = "<group>"; };
+		D372165C1E70F4810098A907 /* FTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTView.swift; sourceTree = "<group>"; };
+		D372165E1E70F4FC0098A907 /* FTTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTableView.swift; sourceTree = "<group>"; };
+		D37216601E70F50B0098A907 /* FTTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTableViewCell.swift; sourceTree = "<group>"; };
+		D37216621E70F5200098A907 /* FTArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTArray.swift; sourceTree = "<group>"; };
+		D37216641E70F52F0098A907 /* FTMutableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMutableArray.swift; sourceTree = "<group>"; };
+		D37216661E70F5410098A907 /* FTDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDictionary.swift; sourceTree = "<group>"; };
+		D37216681E70F5600098A907 /* FTMutableDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMutableDictionary.swift; sourceTree = "<group>"; };
+		D372166A1E7124A30098A907 /* FTIJKPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTIJKPlayerController.swift; sourceTree = "<group>"; };
+		D372166F1E7125A80098A907 /* FTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTModel.swift; sourceTree = "<group>"; };
+		D37216711E7128140098A907 /* FTHomeLiveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveModel.swift; sourceTree = "<group>"; };
+		D37216731E7128A00098A907 /* FTDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDataSource.swift; sourceTree = "<group>"; };
+		DB5DDF6C4F665789FF3ECF91 /* Pods-FaceTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceTube/Pods-FaceTube.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +133,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37216541E6FE1F80098A907 /* libc++.tbd in Frameworks */,
+				D37216511E6FE05E0098A907 /* IJKMediaFramework.framework in Frameworks */,
+				D325D5FE1E67C93100CB9EEF /* VideoToolbox.framework in Frameworks */,
+				D325D5FC1E67C92800CB9EEF /* OpenGLES.framework in Frameworks */,
+				D325D5FA1E67C92200CB9EEF /* MobileCoreServices.framework in Frameworks */,
+				D37216501E6FE0310098A907 /* IJKMediaFramework.framework in Frameworks */,
+				D325D5F81E67C91700CB9EEF /* MediaPlayer.framework in Frameworks */,
+				D325D5F61E67C90D00CB9EEF /* libz.tbd in Frameworks */,
+				D325D5F41E67C90400CB9EEF /* libbz2.tbd in Frameworks */,
+				D325D5F21E67C8B100CB9EEF /* CoreVideo.framework in Frameworks */,
+				D325D5F01E67C8A300CB9EEF /* CoreMedia.framework in Frameworks */,
+				D325D5EE1E67C89B00CB9EEF /* AVFoundation.framework in Frameworks */,
+				D325D5EC1E67C2DF00CB9EEF /* AudioToolbox.framework in Frameworks */,
+				FBAEC164427E09B129F9D94E /* Pods_FaceTube.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +167,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02B36256DC43015FC9AEE686 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB5DDF6C4F665789FF3ECF91 /* Pods-FaceTube.debug.xcconfig */,
+				041DB04E7ED3876EBB08EFD3 /* Pods-FaceTube.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D301153B1E6823CE00829A34 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D301153C1E68245000829A34 /* FTHTTPClient.swift */,
+				D372166A1E7124A30098A907 /* FTIJKPlayerController.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		D325D5DB1E66C63A00CB9EEF /* Shelf */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +197,31 @@
 			isa = PBXGroup;
 			children = (
 				D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */,
+				D372166C1E7125050098A907 /* Model */,
+				D372166D1E7125050098A907 /* View */,
 				D325D5E61E66DA5D00CB9EEF /* Home.xcassets */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D325D5EA1E67C2DE00CB9EEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */,
+				D325D5FD1E67C93100CB9EEF /* VideoToolbox.framework */,
+				D325D5FB1E67C92800CB9EEF /* OpenGLES.framework */,
+				D325D5F91E67C92200CB9EEF /* MobileCoreServices.framework */,
+				D325D5F71E67C91700CB9EEF /* MediaPlayer.framework */,
+				D325D5F51E67C90D00CB9EEF /* libz.tbd */,
+				D325D5F31E67C90400CB9EEF /* libbz2.tbd */,
+				D37216531E6FE1F80098A907 /* libc++.tbd */,
+				D325D5F11E67C8B100CB9EEF /* CoreVideo.framework */,
+				D325D5EF1E67C8A300CB9EEF /* CoreMedia.framework */,
+				D325D5ED1E67C89B00CB9EEF /* AVFoundation.framework */,
+				D325D5EB1E67C2DF00CB9EEF /* AudioToolbox.framework */,
+				854F032D28A932DD74EE96DF /* Pods_FaceTube.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D340A6EB1E6030E20059E665 = {
@@ -106,6 +231,8 @@
 				D340A70E1E6030E30059E665 /* FaceTubeTests */,
 				D340A7191E6030E30059E665 /* FaceTubeUITests */,
 				D340A6F51E6030E20059E665 /* Products */,
+				D325D5EA1E67C2DE00CB9EEF /* Frameworks */,
+				02B36256DC43015FC9AEE686 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,9 +254,12 @@
 				D340A6FB1E6030E20059E665 /* Main.storyboard */,
 				D325D5E31E66D71D00CB9EEF /* Home */,
 				D325D5DB1E66C63A00CB9EEF /* Shelf */,
+				D301153B1E6823CE00829A34 /* Tool */,
+				D37216591E70F3950098A907 /* Base */,
 				D340A7011E6030E20059E665 /* Assets.xcassets */,
 				D340A7031E6030E20059E665 /* LaunchScreen.storyboard */,
 				D340A7061E6030E20059E665 /* Info.plist */,
+				D30115401E691EA500829A34 /* FaceTube-Bridging-Header.h */,
 				D340A6FE1E6030E20059E665 /* FaceTube.xcdatamodeld */,
 			);
 			path = FaceTube;
@@ -153,6 +283,46 @@
 			path = FaceTubeUITests;
 			sourceTree = "<group>";
 		};
+		D37216591E70F3950098A907 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D372165A1E70F4680098A907 /* FTViewController.swift */,
+				D372165C1E70F4810098A907 /* FTView.swift */,
+				D372166F1E7125A80098A907 /* FTModel.swift */,
+				D37216731E7128A00098A907 /* FTDataSource.swift */,
+				D372165E1E70F4FC0098A907 /* FTTableView.swift */,
+				D37216601E70F50B0098A907 /* FTTableViewCell.swift */,
+				D37216621E70F5200098A907 /* FTArray.swift */,
+				D37216641E70F52F0098A907 /* FTMutableArray.swift */,
+				D37216661E70F5410098A907 /* FTDictionary.swift */,
+				D37216681E70F5600098A907 /* FTMutableDictionary.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D372166C1E7125050098A907 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D37216711E7128140098A907 /* FTHomeLiveModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D372166D1E7125050098A907 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D372166E1E7125050098A907 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D372166E1E7125050098A907 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +330,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D340A71F1E6030E30059E665 /* Build configuration list for PBXNativeTarget "FaceTube" */;
 			buildPhases = (
+				C033CF6C361BCA4479E04874 /* [CP] Check Pods Manifest.lock */,
 				D340A6F01E6030E20059E665 /* Sources */,
 				D340A6F11E6030E20059E665 /* Frameworks */,
 				D340A6F21E6030E20059E665 /* Resources */,
+				A3E72797FE3BAA16B5536EFB /* [CP] Embed Pods Frameworks */,
+				8869D56EAB557C97D3BEACA1 /* [CP] Copy Pods Resources */,
+				D3CB8F7A1E6D359700434A17 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -284,16 +458,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8869D56EAB557C97D3BEACA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaceTube/Pods-FaceTube-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3E72797FE3BAA16B5536EFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FaceTube/Pods-FaceTube-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C033CF6C361BCA4479E04874 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D340A6F01E6030E20059E665 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37216631E70F5200098A907 /* FTArray.swift in Sources */,
+				D301153D1E68245000829A34 /* FTHTTPClient.swift in Sources */,
 				D325D5E51E66D73D00CB9EEF /* HomeViewController.swift in Sources */,
+				D37216701E7125A80098A907 /* FTModel.swift in Sources */,
 				D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */,
+				D37216671E70F5410098A907 /* FTDictionary.swift in Sources */,
 				D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */,
+				D37216691E70F5600098A907 /* FTMutableDictionary.swift in Sources */,
+				D372165D1E70F4810098A907 /* FTView.swift in Sources */,
+				D37216651E70F52F0098A907 /* FTMutableArray.swift in Sources */,
+				D372165F1E70F4FC0098A907 /* FTTableView.swift in Sources */,
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
+				D37216741E7128A00098A907 /* FTDataSource.swift in Sources */,
+				D372166B1E7124A30098A907 /* FTIJKPlayerController.swift in Sources */,
+				D37216611E70F50B0098A907 /* FTTableViewCell.swift in Sources */,
 				D340A7001E6030E20059E665 /* FaceTube.xcdatamodeld in Sources */,
+				D372165B1E70F4680098A907 /* FTViewController.swift in Sources */,
+				D37216721E7128140098A907 /* FTHomeLiveModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,26 +676,40 @@
 		};
 		D340A7201E6030E30059E665 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB5DDF6C4F665789FF3ECF91 /* Pods-FaceTube.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92TS993A24;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FaceTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = longpengfei.FaceTube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceTube/FaceTube-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D340A7211E6030E30059E665 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 041DB04E7ED3876EBB08EFD3 /* Pods-FaceTube.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 92TS993A24;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FaceTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = longpengfei.FaceTube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FaceTube/FaceTube-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

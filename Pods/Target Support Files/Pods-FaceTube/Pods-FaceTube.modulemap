@@ -1,0 +1,6 @@
+framework module Pods_FaceTube {
+  umbrella header "Pods-FaceTube-umbrella.h"
+
+  export *
+  module * { export * }
+}

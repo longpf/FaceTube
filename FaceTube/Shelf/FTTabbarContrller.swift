@@ -37,10 +37,10 @@ class FTTabbarContrller: UITabBarController {
     fileprivate func addChildViewControllers(){
         
         let homeViewController = HomeViewController()
-        homeViewController.view.backgroundColor = UIColor.red
+        homeViewController.view.backgroundColor = UIColor.white
         homeViewController.tabBarItem.title = "首页"
         
-        let secViewController = HomeViewController()
+        let secViewController = UIViewController()
         secViewController.view.backgroundColor = UIColor.yellow
         secViewController.tabBarItem.title = "sec"
         
