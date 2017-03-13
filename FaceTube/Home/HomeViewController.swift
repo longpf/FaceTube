@@ -16,8 +16,10 @@ class HomeViewController: FTViewController {
     var SCREEN_SIZE: CGSize! = UIScreen.main.bounds.size
     
     var tableView: FTTableView!
+    var dataSource: FTHomeLiveDataSource!
     var palyUrl = ""
     var player: IJKFFMoviePlayerController! = nil;
+    
     
     
     //MARK:lift cycle
@@ -29,11 +31,25 @@ class HomeViewController: FTViewController {
         
         self.tableView = FTTableView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_SIZE.width, height: SCREEN_SIZE.height-40), style: .plain)
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        self.tableView.backgroundColor = UIColor.lightGray
+        
+        
+        self.dataSource = FTHomeLiveDataSource()
+        self.dataSource.fetchNewestData()
+        self.dataSource.fetchDataCompleted = { (dataSource: FTDataSource) in
+            
+            for info in dataSource.dataArray! {
+                let model = info as? FTHomeLiveModel
+                print(model ?? "nil")
+            }
+            
+        }
         
         
         // Do any additional setup after loading the view.
 
         
+        /*
         FTHTTPClient
             .getRequest(urlString: "http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1", params: nil, success: {
             (responsObjc) -> Void in
@@ -65,8 +81,10 @@ class HomeViewController: FTViewController {
             
             })
         
+        
+        */
 
-
+        
                 
             
         
@@ -106,14 +124,18 @@ extension HomeViewController: UITableViewDataSource {
         return 10;
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell.init()
+        
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = String(indexPath.row)
+        return cell
+    
     }
     
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
     
     
 }

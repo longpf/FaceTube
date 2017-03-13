@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class FTModel: Mappable {
+class FTModel:NSObject, Mappable {
     
     required init?(map: Map) {
         

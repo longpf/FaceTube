@@ -9,5 +9,6 @@ target 'FaceTube' do
 	pod "SnapKit"
     pod "FDFullscreenPopGesture"
     pod "ObjectMapper"
+    pod "AlamofireObjectMapper"
     
 end
