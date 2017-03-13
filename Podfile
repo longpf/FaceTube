@@ -9,6 +9,6 @@ target 'FaceTube' do
 	pod "SnapKit"
     pod "FDFullscreenPopGesture"
     pod "ObjectMapper"
-    pod "SDWebImage"
+    pod "Kingfisher"
     
 end
