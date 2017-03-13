@@ -1,0 +1,24 @@
+//
+//  FTHomeLiveTableViewCell.swift
+//  FaceTube
+//
+//  Created by 龙鹏飞 on 2017/3/13.
+//  Copyright © 2017年 https://github.com/LongPF/FaceTube. All rights reserved.
+//
+
+import UIKit
+
+class FTHomeLiveTableViewCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+}

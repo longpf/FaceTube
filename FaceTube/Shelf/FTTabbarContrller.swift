@@ -36,7 +36,7 @@ class FTTabbarContrller: UITabBarController {
     
     fileprivate func addChildViewControllers(){
         
-        let homeViewController = HomeViewController()
+        let homeViewController = FTHomeViewController()
         homeViewController.view.backgroundColor = UIColor.white
         homeViewController.tabBarItem.title = "首页"
         

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D301153D1E68245000829A34 /* FTHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D301153C1E68245000829A34 /* FTHTTPClient.swift */; };
 		D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D5DE1E66C6B200CB9EEF /* FTTabbarContrller.swift */; };
-		D325D5E51E66D73D00CB9EEF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */; };
 		D325D5E71E66DA5D00CB9EEF /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D325D5E61E66DA5D00CB9EEF /* Home.xcassets */; };
 		D325D5EC1E67C2DF00CB9EEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5EB1E67C2DF00CB9EEF /* AudioToolbox.framework */; };
 		D325D5EE1E67C89B00CB9EEF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5ED1E67C89B00CB9EEF /* AVFoundation.framework */; };
@@ -29,6 +28,9 @@
 		D340A7051E6030E20059E665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D340A7031E6030E20059E665 /* LaunchScreen.storyboard */; };
 		D340A7101E6030E30059E665 /* FaceTubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A70F1E6030E30059E665 /* FaceTubeTests.swift */; };
 		D340A71B1E6030E30059E665 /* FaceTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A71A1E6030E30059E665 /* FaceTubeUITests.swift */; };
+		D3452E6F1E76DE0900E86405 /* FTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */; };
+		D3452E711E76E66E00E86405 /* FTHomeLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3452E701E76E66E00E86405 /* FTHomeLiveTableViewCell.swift */; };
+		D3452E731E76E71800E86405 /* FTUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3452E721E76E71800E86405 /* FTUserView.swift */; };
 		D37216501E6FE0310098A907 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; };
 		D37216511E6FE05E0098A907 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; };
 		D37216521E6FE05E0098A907 /* IJKMediaFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -87,7 +89,6 @@
 		D301153C1E68245000829A34 /* FTHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHTTPClient.swift; sourceTree = "<group>"; };
 		D30115401E691EA500829A34 /* FaceTube-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceTube-Bridging-Header.h"; sourceTree = "<group>"; };
 		D325D5DE1E66C6B200CB9EEF /* FTTabbarContrller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTabbarContrller.swift; sourceTree = "<group>"; };
-		D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D325D5E61E66DA5D00CB9EEF /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Home.xcassets; sourceTree = "<group>"; };
 		D325D5EB1E67C2DF00CB9EEF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D325D5ED1E67C89B00CB9EEF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +114,9 @@
 		D340A7161E6030E30059E665 /* FaceTubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceTubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D340A71A1E6030E30059E665 /* FaceTubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTubeUITests.swift; sourceTree = "<group>"; };
 		D340A71C1E6030E30059E665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeViewController.swift; sourceTree = "<group>"; };
+		D3452E701E76E66E00E86405 /* FTHomeLiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveTableViewCell.swift; sourceTree = "<group>"; };
+		D3452E721E76E71800E86405 /* FTUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTUserView.swift; sourceTree = "<group>"; };
 		D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		D37216531E6FE1F80098A907 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D372165A1E70F4680098A907 /* FTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				D301153C1E68245000829A34 /* FTHTTPClient.swift */,
 				D372166A1E7124A30098A907 /* FTIJKPlayerController.swift */,
 				D372167A1E71A9A60098A907 /* FTTool.swift */,
+				D3452E721E76E71800E86405 /* FTUserView.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -201,7 +206,7 @@
 		D325D5E31E66D71D00CB9EEF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D325D5E41E66D73D00CB9EEF /* HomeViewController.swift */,
+				D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */,
 				D37216751E7134670098A907 /* DataSource */,
 				D372166C1E7125050098A907 /* Model */,
 				D372166D1E7125050098A907 /* View */,
@@ -325,6 +330,7 @@
 		D372166E1E7125050098A907 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D3452E701E76E66E00E86405 /* FTHomeLiveTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -528,17 +534,19 @@
 				D37216631E70F5200098A907 /* FTArray.swift in Sources */,
 				D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */,
 				D301153D1E68245000829A34 /* FTHTTPClient.swift in Sources */,
-				D325D5E51E66D73D00CB9EEF /* HomeViewController.swift in Sources */,
 				D37216701E7125A80098A907 /* FTModel.swift in Sources */,
 				D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */,
 				D37216671E70F5410098A907 /* FTDictionary.swift in Sources */,
 				D372167B1E71A9A60098A907 /* FTTool.swift in Sources */,
 				D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */,
 				D37216691E70F5600098A907 /* FTMutableDictionary.swift in Sources */,
+				D3452E711E76E66E00E86405 /* FTHomeLiveTableViewCell.swift in Sources */,
 				D372165D1E70F4810098A907 /* FTView.swift in Sources */,
 				D37216651E70F52F0098A907 /* FTMutableArray.swift in Sources */,
 				D372165F1E70F4FC0098A907 /* FTTableView.swift in Sources */,
+				D3452E6F1E76DE0900E86405 /* FTHomeViewController.swift in Sources */,
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
+				D3452E731E76E71800E86405 /* FTUserView.swift in Sources */,
 				D37216741E7128A00098A907 /* FTDataSource.swift in Sources */,
 				D372166B1E7124A30098A907 /* FTIJKPlayerController.swift in Sources */,
 				D37216611E70F50B0098A907 /* FTTableViewCell.swift in Sources */,
