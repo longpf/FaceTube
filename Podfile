@@ -10,5 +10,6 @@ target 'FaceTube' do
     pod "FDFullscreenPopGesture"
     pod "ObjectMapper"
     pod "Kingfisher"
+    pod "AMScrollingNavbar"
     
 end

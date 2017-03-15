@@ -9,9 +9,10 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import AMScrollingNavbar
 
 
-class FTHomeViewController: FTViewController {
+class FTHomeViewController: FTViewController, ScrollingNavigationControllerDelegate {
     
     var SCREEN_SIZE: CGSize! = UIScreen.main.bounds.size
     
@@ -19,14 +20,17 @@ class FTHomeViewController: FTViewController {
     var dataSource: FTHomeLiveDataSource!
     var palyUrl = ""
     var player: IJKFFMoviePlayerController! = nil;
-    
+    var toolbar: UIToolbar!
     
     
     //MARK:lift cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "直播"
+        view.backgroundColor = UIColor.backgroundColor()
         
+
         
         self.tableView = FTTableView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_SIZE.width, height: SCREEN_SIZE.height-40), style: .plain)
         self.tableView.register(FTHomeLiveTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
@@ -34,6 +38,7 @@ class FTHomeViewController: FTViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.separatorStyle = .none
+        self.tableView.backgroundColor = UIColor.backgroundColor()
         self.view.addSubview(self.tableView)
         
         
@@ -43,21 +48,34 @@ class FTHomeViewController: FTViewController {
             self.tableView.reloadData()
         }
         
-        
-        
-        
-        
-        
-        
-        
+    }
+    
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.barTintColor = UIColor.navigationBarColor()
+        if let navigationController = self.navigationController as? ScrollingNavigationController {
+            navigationController.followScrollView(tableView, delay: 0.0)
+            navigationController.scrollingNavbarDelegate = self
+            
+            //            navigationController.setNavigationBarHidden(true, animated: false)
+            //            navigationController.scrollingEnabled = false
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
 
+    
     
     
     
@@ -91,3 +109,6 @@ extension FTHomeViewController: UITableViewDelegate {
     
     
 }
+
+
+

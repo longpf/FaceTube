@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AMScrollingNavbar
 
 class FTTabbarContrller: UITabBarController {
 
@@ -27,24 +28,30 @@ class FTTabbarContrller: UITabBarController {
     
     
     
-    
-    
-    
-    
-    
     //MARK:private methods
     
     fileprivate func addChildViewControllers(){
         
+        //home
         let homeViewController = FTHomeViewController()
-        homeViewController.view.backgroundColor = UIColor.white
-        homeViewController.tabBarItem.title = "首页"
+        homeViewController.view.backgroundColor = UIColor.backgroundColor()
+        let homeTabBarItem: UITabBarItem = UITabBarItem.init(title: nil, image: UIImage.init(named: "ft_tabbar_live"), selectedImage: UIImage.init(named: "ft_tabbar_live_hl"))
+        homeTabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0)
+        homeViewController.tabBarItem = homeTabBarItem
+        let homeNav: ScrollingNavigationController = ScrollingNavigationController.init(rootViewController: homeViewController)
         
-        let secViewController = UIViewController()
-        secViewController.view.backgroundColor = UIColor.yellow
-        secViewController.tabBarItem.title = "sec"
         
-        let controllers = NSArray.init(array:[homeViewController,secViewController])
+        //record
+        let recordViewController = FTViewController()
+        recordViewController.view.backgroundColor = UIColor.backgroundColor()
+        let recordTabBarItem: UITabBarItem = UITabBarItem.init(title: nil, image: UIImage.init(named: "ft_tabbar_record"), selectedImage: UIImage.init(named: "ft_tabbar_record_hl"))
+        recordTabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+        recordViewController.tabBarItem = recordTabBarItem
+        let recordNav: ScrollingNavigationController = ScrollingNavigationController.init(rootViewController: recordViewController)
+        
+        
+        let controllers = NSArray.init(array:[homeNav,recordNav])
+        
         
         self.viewControllers = controllers as? [UIViewController]
         

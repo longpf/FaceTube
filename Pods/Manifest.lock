@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - AMScrollingNavbar (3.2.0)
   - FDFullscreenPopGesture (1.1)
   - Kingfisher (3.5.2)
   - MJRefresh (3.1.12)
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AMScrollingNavbar
   - FDFullscreenPopGesture
   - Kingfisher
   - MJRefresh
@@ -18,6 +20,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AMScrollingNavbar: cf603d4d5f11061d466a0878b9ada136248927b2
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Kingfisher: 9950e382c500b6834ce004c7c4131c444e90c3a1
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -25,6 +28,6 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 3972832688c2a2d198d75ce518a1f4a9973157d7
+PODFILE CHECKSUM: 4eb92d1d19c158b10a60e7ae8a63eec369503331
 
 COCOAPODS: 1.1.1

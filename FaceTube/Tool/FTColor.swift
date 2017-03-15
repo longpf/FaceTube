@@ -138,6 +138,10 @@ extension UIColor {
         return UIColor.init(hexString: "#EDEDED")!
     }
     
+    public class func navigationBarColor() -> UIColor {
+        return UIColor.init(hexString: "#3b5998")!
+    }
+    
     public class func randomColor() -> UIColor{
         let colors: NSArray = ["#D3DCD0","#F6F1EB","#F9F0E5","#FCF0DA","#EDD2C9",
                                "#DAC0A8","#D3C9CA","#C2B8B1","#DDC6BC","#A18E87",
