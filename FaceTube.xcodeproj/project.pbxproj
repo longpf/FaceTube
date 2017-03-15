@@ -20,6 +20,10 @@
 		D325D5FA1E67C92200CB9EEF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5F91E67C92200CB9EEF /* MobileCoreServices.framework */; };
 		D325D5FC1E67C92800CB9EEF /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5FB1E67C92800CB9EEF /* OpenGLES.framework */; };
 		D325D5FE1E67C93100CB9EEF /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5FD1E67C93100CB9EEF /* VideoToolbox.framework */; };
+		D334D1E21E77B50700F67BAA /* FTFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D1E11E77B50700F67BAA /* FTFont.swift */; };
+		D334D2261E77C36400F67BAA /* FTColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2251E77C36400F67BAA /* FTColor.swift */; };
+		D334D2281E77D42100F67BAA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2271E77D42100F67BAA /* File.swift */; };
+		D334D22A1E781ED400F67BAA /* FTValidObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2291E781ED400F67BAA /* FTValidObject.swift */; };
 		D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F71E6030E20059E665 /* AppDelegate.swift */; };
 		D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F91E6030E20059E665 /* ViewController.swift */; };
 		D340A6FD1E6030E20059E665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D340A6FB1E6030E20059E665 /* Main.storyboard */; };
@@ -100,6 +104,10 @@
 		D325D5F91E67C92200CB9EEF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D325D5FB1E67C92800CB9EEF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		D325D5FD1E67C93100CB9EEF /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		D334D1E11E77B50700F67BAA /* FTFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTFont.swift; sourceTree = "<group>"; };
+		D334D2251E77C36400F67BAA /* FTColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTColor.swift; sourceTree = "<group>"; };
+		D334D2271E77D42100F67BAA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		D334D2291E781ED400F67BAA /* FTValidObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTValidObject.swift; sourceTree = "<group>"; };
 		D340A6F41E6030E20059E665 /* FaceTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D340A6F71E6030E20059E665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D340A6F91E6030E20059E665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +199,9 @@
 				D372166A1E7124A30098A907 /* FTIJKPlayerController.swift */,
 				D372167A1E71A9A60098A907 /* FTTool.swift */,
 				D3452E721E76E71800E86405 /* FTUserView.swift */,
+				D334D1E11E77B50700F67BAA /* FTFont.swift */,
+				D334D2251E77C36400F67BAA /* FTColor.swift */,
+				D334D2291E781ED400F67BAA /* FTValidObject.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */,
+				D334D2271E77D42100F67BAA /* File.swift */,
 				D37216751E7134670098A907 /* DataSource */,
 				D372166C1E7125050098A907 /* Model */,
 				D372166D1E7125050098A907 /* View */,
@@ -531,7 +543,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D334D2281E77D42100F67BAA /* File.swift in Sources */,
 				D37216631E70F5200098A907 /* FTArray.swift in Sources */,
+				D334D2261E77C36400F67BAA /* FTColor.swift in Sources */,
 				D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */,
 				D301153D1E68245000829A34 /* FTHTTPClient.swift in Sources */,
 				D37216701E7125A80098A907 /* FTModel.swift in Sources */,
@@ -546,7 +560,9 @@
 				D372165F1E70F4FC0098A907 /* FTTableView.swift in Sources */,
 				D3452E6F1E76DE0900E86405 /* FTHomeViewController.swift in Sources */,
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
+				D334D22A1E781ED400F67BAA /* FTValidObject.swift in Sources */,
 				D3452E731E76E71800E86405 /* FTUserView.swift in Sources */,
+				D334D1E21E77B50700F67BAA /* FTFont.swift in Sources */,
 				D37216741E7128A00098A907 /* FTDataSource.swift in Sources */,
 				D372166B1E7124A30098A907 /* FTIJKPlayerController.swift in Sources */,
 				D37216611E70F50B0098A907 /* FTTableViewCell.swift in Sources */,
@@ -710,6 +726,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FaceTube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = longpengfei.FaceTube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -730,6 +747,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = FaceTube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = longpengfei.FaceTube;
 				PRODUCT_NAME = "$(TARGET_NAME)";

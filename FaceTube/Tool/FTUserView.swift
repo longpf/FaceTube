@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
+
 
 class FTUserView: FTView {
 
@@ -38,10 +40,12 @@ class FTUserView: FTView {
         }
     }
     
+    
     //MARK: interface methods
     
     public func updateUserViewWithHomeLiveModel(model: FTHomeLiveModel){
-        
+        let url = URL(string: model.portrait!)
+        avatar.kf.setImage(with: url);
     }
     
 
