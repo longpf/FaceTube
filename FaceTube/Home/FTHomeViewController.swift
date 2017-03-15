@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AMScrollingNavbar
-
+import MJRefresh
 
 class FTHomeViewController: FTViewController, ScrollingNavigationControllerDelegate {
     
@@ -30,8 +30,15 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
         title = "直播"
         view.backgroundColor = UIColor.backgroundColor()
         
+        //dataSource
+        self.dataSource = FTHomeLiveDataSource()
+        self.dataSource.fetchDataCompleted = { (dataSource: FTDataSource) in
+            self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+        }
 
-        
+
+        //tableView
         self.tableView = FTTableView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_SIZE.width, height: SCREEN_SIZE.height-40), style: .plain)
         self.tableView.register(FTHomeLiveTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         self.tableView.backgroundColor = UIColor.white
@@ -41,16 +48,14 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
         self.tableView.backgroundColor = UIColor.backgroundColor()
         self.view.addSubview(self.tableView)
         
+        //refresh
+        let header: MJRefreshNormalHeader = MJRefreshNormalHeader()
+        header.setRefreshingTarget(self.dataSource, refreshingAction: #selector(FTDataSource.fetchNewestData))
+        self.tableView.mj_header = header
         
-        self.dataSource = FTHomeLiveDataSource()
-        self.dataSource.fetchNewestData()
-        self.dataSource.fetchDataCompleted = { (dataSource: FTDataSource) in
-            self.tableView.reloadData()
-        }
-        
+        //获取数据
+        self.tableView.mj_header.beginRefreshing()
     }
-    
-
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -63,7 +68,6 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 0.0)
             navigationController.scrollingNavbarDelegate = self
-            
             //            navigationController.setNavigationBarHidden(true, animated: false)
             //            navigationController.scrollingEnabled = false
         }
@@ -73,13 +77,6 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
-    
-    
-    
-    
-    
 }
 
 extension FTHomeViewController: UITableViewDataSource {

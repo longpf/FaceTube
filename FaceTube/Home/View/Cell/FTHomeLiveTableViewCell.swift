@@ -120,7 +120,7 @@ class FTHomeLiveTableViewCell: UITableViewCell {
         
         position.snp.makeConstraints { (make) in
             make.leading.equalTo(nickLabel.snp.leading)
-            make.top.equalTo(nickLabel.snp.bottom).offset(7)
+            make.top.equalTo(nickLabel.snp.bottom).offset(5)
             make.size.equalTo(CGSize.init(width: 12, height: 13))
         }
         

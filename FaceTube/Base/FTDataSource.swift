@@ -39,6 +39,11 @@ class FTDataSource: NSObject {
     /// 请求失败的回调,与delegate实现一个即可
     var fetchDataFail: ((_ dataSource: FTDataSource, _ error: NSError) -> Void)?
     
+    override init(){
+        super.init()
+        dataArray = NSMutableArray()
+    }
+    
     public func fetchNewestData(){
         
     }
