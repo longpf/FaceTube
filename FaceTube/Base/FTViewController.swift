@@ -9,28 +9,42 @@
 import UIKit
 import AMScrollingNavbar
 
-class FTViewController: ScrollingNavigationViewController {
 
+class FTViewController: ScrollingNavigationViewController,FTMagicMoveTransionFromProtocol,FTMagicMoveTransionToProtocol {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little przeparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
-    */
+    
+    
+    //转场动画
+    func captureView() -> UIView? {
+        return nil
+    }
+    
+    func captureViewAnimationFrame() -> CGRect {
+        return CGRect.init()
+    }
+    
+    func magicMoveTransionComplete() {
+        
+    }
+    
+    func needBlur() -> Bool {
+        return false
+    }
+    
+    func needHiddenTabBar() -> Bool{
+        return false
+    }
+
 
 }

@@ -16,12 +16,11 @@ class FTHomeLiveTableViewCell: UITableViewCell {
     var nickLabel: UILabel!
     var position: UIImageView!
     var cityLabel: UILabel!
-    var fansIcon: UIImageView!
-    var fansLabel: UILabel!
     var onlineIcon: UIImageView!
     var onlineLabel: UILabel!
     var instructLabel: UILabel!
     var thumbImageView: UIImageView!
+    var pointLabel: UILabel!
     
     //MARK: lift cycle
     
@@ -69,14 +68,6 @@ class FTHomeLiveTableViewCell: UITableViewCell {
         cityLabel.lineBreakMode = .byTruncatingTail
         contentView.addSubview(cityLabel)
         
-        fansIcon = UIImageView.init(image: UIImage.init(named: "ft_fans_icon"))
-        contentView.addSubview(fansIcon)
-        
-        fansLabel = UILabel()
-        fansLabel.font = UIFont.ft_regular(13)
-        fansLabel.textColor = UIColor.assistTextColor()
-        contentView.addSubview(fansLabel)
-        
         onlineIcon = UIImageView.init(image: UIImage.init(named: "ft_online_icon"))
         contentView.addSubview(onlineIcon)
         
@@ -84,6 +75,11 @@ class FTHomeLiveTableViewCell: UITableViewCell {
         onlineLabel.font = UIFont.ft_regular(13)
         onlineLabel.textColor = UIColor.assistTextColor()
         contentView.addSubview(onlineLabel)
+        
+        pointLabel = UILabel()
+        pointLabel.font = UIFont.ft_regular(13)
+        pointLabel.textColor = UIColor.assistTextColor()
+        contentView.addSubview(pointLabel)
         
         instructLabel = UILabel()
         instructLabel.font = UIFont.ft_medium(15)
@@ -96,10 +92,10 @@ class FTHomeLiveTableViewCell: UITableViewCell {
         thumbImageView.contentMode = .scaleToFill
         contentView.addSubview(thumbImageView)
         
-        //处理模糊
-        let blurEffect: UIBlurEffect = UIBlurEffect.init(style: .light)
-        let visualEffectView: UIVisualEffectView = UIVisualEffectView.init(effect: blurEffect)
-        thumbImageView.addSubview(visualEffectView)
+//        //处理模糊
+//        let blurEffect: UIBlurEffect = UIBlurEffect.init(style: .light)
+//        let visualEffectView: UIVisualEffectView = UIVisualEffectView.init(effect: blurEffect)
+//        thumbImageView.addSubview(visualEffectView)
         
         backgroundColorView .snp.makeConstraints { (make) in
             make.leading.trailing.bottom.equalTo(contentView)
@@ -130,25 +126,20 @@ class FTHomeLiveTableViewCell: UITableViewCell {
             make.width.lessThanOrEqualTo(80)
         }
         
-        fansIcon.snp.makeConstraints { (make) in
-            make.leading.equalTo(cityLabel.snp.trailing).offset(15)
-            make.top.equalTo(cityLabel.snp.top)
-            make.height.width.equalTo(14)
-        }
-        
-        fansLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(fansIcon.snp.trailing).offset(5)
-            make.top.equalTo(cityLabel.snp.top)
-        }
-        
         onlineIcon.snp.makeConstraints { (make) in
-            make.leading.equalTo(fansLabel.snp.trailing).offset(15)
+            make.leading.equalTo(cityLabel.snp.trailing).offset(15)
             make.top.equalTo(cityLabel.snp.top)
             make.height.width.equalTo(14)
         }
         
         onlineLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(onlineIcon.snp.trailing).offset(5)
+            make.top.equalTo(cityLabel.snp.top)
+        }
+        
+        pointLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(onlineLabel.snp.trailing).offset(15)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-15)
             make.top.equalTo(cityLabel.snp.top)
         }
         
@@ -164,9 +155,9 @@ class FTHomeLiveTableViewCell: UITableViewCell {
         }
         
         
-        visualEffectView.snp.makeConstraints { (make) in
-            make.edges.equalTo(thumbImageView)
-        }
+//        visualEffectView.snp.makeConstraints { (make) in
+//            make.edges.equalTo(thumbImageView)
+//        }
     }
     
     
@@ -181,15 +172,23 @@ class FTHomeLiveTableViewCell: UITableViewCell {
     public func updateHomeLiveCell(model: FTHomeLiveModel){
         
         userView.updateUserViewWithHomeLiveModel(model: model)
-        nickLabel.text = model.nick
+        nickLabel.text = model.creator?.nick
         cityLabel.text = model.city
-        fansLabel.text = FTTool.number2String(num: model.radio_fan_number)
         onlineLabel.text = FTTool.number2String(num: model.online_users)
+        
+        let points: NSMutableArray = NSMutableArray()
+        for lb in (model.extra?.label)!{
+            points.add(lb.tab_name as Any)
+        }
+        if points.count != 0 {
+            let pointsStr = points.componentsJoined(by: " · ");
+            pointLabel.text = pointsStr
+        }
         
         
         //封面图的处理
         thumbImageView.backgroundColor = UIColor.randomColor()
-        let url = URL(string: model.portrait!)
+        let url = URL(string: (model.creator?.portrait)!)
         thumbImageView.kf.setImage(with: url);
         
         //name不为空

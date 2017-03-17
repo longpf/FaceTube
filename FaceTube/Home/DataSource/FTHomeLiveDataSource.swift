@@ -30,10 +30,10 @@ class FTHomeLiveDataSource: FTDataSource {
             self.dataArray = NSMutableArray()
         }
         
-        let path = "http://openapi.busi.inke.com/open-expand-api"
+        let path = "http://116.211.167.106/api/live/aggregation"
         let params: [String : String] = [
-                                         "timestamp":"1463394863", //用的映客的开放接口,如果不用这个时间戳接口失效
-                                         "sig":"498af6666a534a251b8ec01453b44053"
+                                         "uid":"21868005",
+                                         "interest":"1"
                                         ]
         
         weak var wSelf: FTHomeLiveDataSource! = self;
@@ -42,7 +42,7 @@ class FTHomeLiveDataSource: FTDataSource {
         
         FTHTTPClient.getRequest(urlString: path, params: params, success: { (response) in
             
-            let models = Mapper<FTHomeLiveModelResponse>().map(JSONObject: response)?.radio_list
+            let models = Mapper<FTHomeLiveModelResponse>().map(JSONObject: response)?.lives
             if (wSelf != nil){
                 wSelf.dataArray?.addObjects(from: models!)
                 if (wSelf.fetchDataCompleted != nil){

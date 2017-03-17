@@ -25,6 +25,11 @@
 		D334D2281E77D42100F67BAA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2271E77D42100F67BAA /* File.swift */; };
 		D334D22A1E781ED400F67BAA /* FTValidObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2291E781ED400F67BAA /* FTValidObject.swift */; };
 		D334D26E1E78FF8100F67BAA /* Shelf.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D334D26D1E78FF8100F67BAA /* Shelf.xcassets */; };
+		D334D2711E79177400F67BAA /* FTLiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2701E79177400F67BAA /* FTLiveDetailViewController.swift */; };
+		D334D2B41E7942BE00F67BAA /* FTLiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2B31E7942BE00F67BAA /* FTLiveUser.swift */; };
+		D334D2B61E794A7200F67BAA /* FTLiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2B51E794A7200F67BAA /* FTLiveLabel.swift */; };
+		D334D2B81E79899E00F67BAA /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D334D2B71E79899E00F67BAA /* Common.xcassets */; };
+		D334D2BA1E7997AA00F67BAA /* FTMagicMoveTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2B91E7997AA00F67BAA /* FTMagicMoveTransion.swift */; };
 		D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F71E6030E20059E665 /* AppDelegate.swift */; };
 		D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F91E6030E20059E665 /* ViewController.swift */; };
 		D340A6FD1E6030E20059E665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D340A6FB1E6030E20059E665 /* Main.storyboard */; };
@@ -110,6 +115,11 @@
 		D334D2271E77D42100F67BAA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		D334D2291E781ED400F67BAA /* FTValidObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTValidObject.swift; sourceTree = "<group>"; };
 		D334D26D1E78FF8100F67BAA /* Shelf.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shelf.xcassets; sourceTree = "<group>"; };
+		D334D2701E79177400F67BAA /* FTLiveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTLiveDetailViewController.swift; sourceTree = "<group>"; };
+		D334D2B31E7942BE00F67BAA /* FTLiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTLiveUser.swift; sourceTree = "<group>"; };
+		D334D2B51E794A7200F67BAA /* FTLiveLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTLiveLabel.swift; sourceTree = "<group>"; };
+		D334D2B71E79899E00F67BAA /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
+		D334D2B91E7997AA00F67BAA /* FTMagicMoveTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMagicMoveTransion.swift; sourceTree = "<group>"; };
 		D340A6F41E6030E20059E665 /* FaceTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D340A6F71E6030E20059E665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D340A6F91E6030E20059E665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +214,7 @@
 				D334D1E11E77B50700F67BAA /* FTFont.swift */,
 				D334D2251E77C36400F67BAA /* FTColor.swift */,
 				D334D2291E781ED400F67BAA /* FTValidObject.swift */,
+				D334D2B91E7997AA00F67BAA /* FTMagicMoveTransion.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -221,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */,
+				D334D2701E79177400F67BAA /* FTLiveDetailViewController.swift */,
 				D334D2271E77D42100F67BAA /* File.swift */,
 				D37216751E7134670098A907 /* DataSource */,
 				D372166C1E7125050098A907 /* Model */,
@@ -248,6 +260,24 @@
 				854F032D28A932DD74EE96DF /* Pods_FaceTube.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D334D26F1E7916D700F67BAA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D334D2B21E79427A00F67BAA /* Model */,
+				D334D2B71E79899E00F67BAA /* Common.xcassets */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D334D2B21E79427A00F67BAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D334D2B31E7942BE00F67BAA /* FTLiveUser.swift */,
+				D334D2B51E794A7200F67BAA /* FTLiveLabel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D340A6EB1E6030E20059E665 = {
@@ -280,6 +310,7 @@
 				D340A6FB1E6030E20059E665 /* Main.storyboard */,
 				D325D5E31E66D71D00CB9EEF /* Home */,
 				D325D5DB1E66C63A00CB9EEF /* Shelf */,
+				D334D26F1E7916D700F67BAA /* Common */,
 				D301153B1E6823CE00829A34 /* Tool */,
 				D37216591E70F3950098A907 /* Base */,
 				D340A7011E6030E20059E665 /* Assets.xcassets */,
@@ -472,6 +503,7 @@
 			files = (
 				D334D26E1E78FF8100F67BAA /* Shelf.xcassets in Resources */,
 				D340A7051E6030E20059E665 /* LaunchScreen.storyboard in Resources */,
+				D334D2B81E79899E00F67BAA /* Common.xcassets in Resources */,
 				D340A7021E6030E20059E665 /* Assets.xcassets in Resources */,
 				D325D5E71E66DA5D00CB9EEF /* Home.xcassets in Resources */,
 				D340A6FD1E6030E20059E665 /* Main.storyboard in Resources */,
@@ -547,6 +579,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D334D2BA1E7997AA00F67BAA /* FTMagicMoveTransion.swift in Sources */,
 				D334D2281E77D42100F67BAA /* File.swift in Sources */,
 				D37216631E70F5200098A907 /* FTArray.swift in Sources */,
 				D334D2261E77C36400F67BAA /* FTColor.swift in Sources */,
@@ -557,14 +590,17 @@
 				D37216671E70F5410098A907 /* FTDictionary.swift in Sources */,
 				D372167B1E71A9A60098A907 /* FTTool.swift in Sources */,
 				D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */,
+				D334D2711E79177400F67BAA /* FTLiveDetailViewController.swift in Sources */,
 				D37216691E70F5600098A907 /* FTMutableDictionary.swift in Sources */,
 				D3452E711E76E66E00E86405 /* FTHomeLiveTableViewCell.swift in Sources */,
 				D372165D1E70F4810098A907 /* FTView.swift in Sources */,
 				D37216651E70F52F0098A907 /* FTMutableArray.swift in Sources */,
 				D372165F1E70F4FC0098A907 /* FTTableView.swift in Sources */,
+				D334D2B41E7942BE00F67BAA /* FTLiveUser.swift in Sources */,
 				D3452E6F1E76DE0900E86405 /* FTHomeViewController.swift in Sources */,
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
 				D334D22A1E781ED400F67BAA /* FTValidObject.swift in Sources */,
+				D334D2B61E794A7200F67BAA /* FTLiveLabel.swift in Sources */,
 				D3452E731E76E71800E86405 /* FTUserView.swift in Sources */,
 				D334D1E21E77B50700F67BAA /* FTFont.swift in Sources */,
 				D37216741E7128A00098A907 /* FTDataSource.swift in Sources */,

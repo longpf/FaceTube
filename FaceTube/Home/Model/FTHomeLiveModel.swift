@@ -11,50 +11,74 @@ import ObjectMapper
 
 class FTHomeLiveModel: FTModel {
     
+    var creator: FTLiveUser?
     var id: String?
-    var nick: String?
-    var gender: NSInteger!
-    var radio_fan_number: NSInteger!
-    var level: NSInteger!
-    var online_users: NSInteger!
     var name: String!
     var city: String!
-    var origin: String?
-    var portrait: String?
-    var live_id: String?
-    var live_url: String?
-    var status: NSInteger!
-    
-
+    var share_addr: String?
+    var stream_addr: String?
+    var version: NSInteger?
+    var slot:NSInteger?
+    var live_type: String?
+    var landscape: NSInteger?
+    var like: [Any]?
+    var optimal: NSInteger?
+    var online_users: NSInteger!
+    var group: NSInteger?
+    var link: NSInteger?
+    var multi: NSInteger?
+    var rotate: NSInteger?
+    var extra: FTHomeLiveExtraModel?
 
     override func mapping(map: Map) {
         
+        creator <- map["creator"]
         id <- map["id"]
-        nick <- map["nick"]
-        gender <- map["gender"]
-        radio_fan_number <- map["radio_fan_number"]
-        level <- map["level"]
-        online_users <- map["online_users"]
         name <- map["name"]
         city <- map["city"]
-        origin <- map["origin"]
-        portrait <- map["portrait"]
-        live_id <- map["live_id"]
-        live_url <- map["live_url"]
-        status <- map["status"]
+        share_addr <- map["share_addr"]
+        stream_addr <- map["stream_addr"]
+        version <- map ["version"]
+        slot <- map["slot"]
+        live_type <- map["live_type"]
+        landscape <- map["landscape"]
+        like <- map["like"]
+        optimal <- map["optimal"]
+        online_users <- map["online_users"]
+        group <- map["group"]
+        link <- map["link"]
+        multi <- map["multi"]
+        rotate <- map["rotate"]
+        extra <- map["extra"]
         
     }
 }
 
-class FTHomeLiveModelResponse: FTModel {
+class FTHomeLiveExtraModel: FTModel {
     
-    var ret: NSInteger?
-    var msg: String!
-    var radio_list: [FTHomeLiveModel]?
+    var cover: Any?
+    var label: [FTLiveLabel]?
     
     override func mapping(map: Map) {
-        ret <- map["ret"]
-        msg <- map["msg"]
-        radio_list <- map["radio_list"]
+        
+        cover <- map["cover"]
+        label <- map["label"]
+        
+    }
+}
+
+
+class FTHomeLiveModelResponse: FTModel {
+    
+    var dm_error: NSInteger?
+    var error_msg: String!
+    var lives: [FTHomeLiveModel]?
+    var expire_time: NSInteger?
+    
+    override func mapping(map: Map) {
+        dm_error <- map["dm_error"]
+        error_msg <- map["error_msg"]
+        lives <- map["lives"]
+        expire_time <- map["expire_time"]
     }
 }

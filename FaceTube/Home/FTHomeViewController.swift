@@ -14,20 +14,18 @@ import MJRefresh
 
 class FTHomeViewController: FTViewController, ScrollingNavigationControllerDelegate {
     
-    var SCREEN_SIZE: CGSize! = UIScreen.main.bounds.size
-    
     var tableView: FTTableView!
     var dataSource: FTHomeLiveDataSource!
     var palyUrl = ""
     var player: IJKFFMoviePlayerController! = nil;
     var toolbar: UIToolbar!
-    
+    var selectedCell: FTHomeLiveTableViewCell?
     
     //MARK:lift cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "直播"
+        title = "FaceTube"
         view.backgroundColor = UIColor.backgroundColor()
         
         //dataSource
@@ -36,7 +34,6 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
         }
-
 
         //tableView
         self.tableView = FTTableView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_SIZE.width, height: SCREEN_SIZE.height-40), style: .plain)
@@ -59,7 +56,9 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        if (navigationController?.delegate == nil){
+            navigationController?.delegate = self
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,15 +67,35 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
         if let navigationController = self.navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 0.0)
             navigationController.scrollingNavbarDelegate = self
-            //            navigationController.setNavigationBarHidden(true, animated: false)
-            //            navigationController.scrollingEnabled = false
         }
+        self.tableView.mj_header.isHidden = false
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tableView.mj_header.isHidden = true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
+    
+    //MARK: 转场动画
+    override func captureView() -> UIView {
+        return (selectedCell?.thumbImageView)!
+    }
+    
+    override func needBlur() -> Bool {
+        return true
+    }
+    
+    override func needHiddenTabBar() -> Bool {
+        return true
+    }
+
+    
 }
 
 extension FTHomeViewController: UITableViewDataSource {
@@ -97,13 +116,32 @@ extension FTHomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return SCREEN_SIZE.width+50
     }
 
 }
 
 extension FTHomeViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCell = tableView.cellForRow(at: indexPath) as! FTHomeLiveTableViewCell?
+        let model: FTHomeLiveModel = dataSource.dataArray[indexPath.row] as! FTHomeLiveModel
+        let detailCon: FTLiveDetailViewController = FTLiveDetailViewController()
+        detailCon.homeLiveModel = model
+        detailCon.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(detailCon, animated: true)
+    }
+}
+
+extension FTHomeViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == UINavigationControllerOperation.push {
+            return FTMagicMoveTransion()
+        } else {
+            return nil
+        }
+    }
     
 }
 

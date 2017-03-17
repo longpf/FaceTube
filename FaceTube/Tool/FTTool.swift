@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+public let SCREEN_SIZE: CGSize = UIScreen.main.bounds.size
+
+
 class FTTool: NSObject {
 
     ///时间戳10位 秒级
@@ -26,5 +30,21 @@ class FTTool: NSObject {
             result = String(format: "%.1f亿", CGFloat(num) / 100000000.0)
         }
         return result
+    }
+    
+    //截屏
+    public class func screenSnapshot() -> UIImage? {
+        
+        guard let window = UIApplication.shared.keyWindow else { return nil }
+        
+        UIGraphicsBeginImageContextWithOptions(window.bounds.size, false, 0.0)
+        
+        window.layer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image
     }
 }

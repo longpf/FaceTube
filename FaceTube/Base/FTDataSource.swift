@@ -19,7 +19,7 @@ protocol FTDataSourceDelegate {
 class FTDataSource: NSObject {
     
     /// 数据列表
-    var dataArray: NSMutableArray?
+    var dataArray: NSMutableArray!
     
     /// 是否正在加载
     var isLoading: Bool!

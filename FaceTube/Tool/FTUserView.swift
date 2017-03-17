@@ -33,6 +33,7 @@ class FTUserView: FTView {
         self.avatar = UIImageView.init()
         self.avatar.layer.masksToBounds = true
         self.avatar.layer.cornerRadius = 4
+        self.avatar.image = UIImage.init(named: "ft_default_user_icon")
         self.addSubview(self.avatar)
         
         self.avatar.snp.makeConstraints { (make) in
@@ -44,8 +45,8 @@ class FTUserView: FTView {
     //MARK: interface methods
     
     public func updateUserViewWithHomeLiveModel(model: FTHomeLiveModel){
-        let url = URL(string: model.portrait!)
-        avatar.kf.setImage(with: url);
+        let url = URL(string: (model.creator?.portrait!)!)
+        avatar.kf.setImage(with: url, placeholder: UIImage.init(named: "ft_default_user_icon"), options: nil, progressBlock: nil, completionHandler: nil)
     }
     
 
