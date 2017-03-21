@@ -47,4 +47,6 @@ class FTTool: NSObject {
         
         return image
     }
+    
+    
 }

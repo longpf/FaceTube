@@ -16,6 +16,8 @@ class FTLiveDetailViewController: FTViewController {
     fileprivate var backgroundImageView: UIImageView?
     fileprivate var visualEffectView: UIVisualEffectView?
     
+    //MARK: lift cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.backgroundColor()
@@ -34,6 +36,10 @@ class FTLiveDetailViewController: FTViewController {
             make.edges.equalTo(backgroundImageView!)
         })
         
+        let backButton = UIButton.init(frame: CGRect.init(x: 15, y: 20, width: 44, height: 44))
+        backButton.setImage(UIImage.init(named: "ft_round_btn_back_n"), for: .normal)
+        backButton.addTarget(self, action: #selector(FTLiveDetailViewController.gotoBack(button:)), for: .touchUpInside)
+        view.addSubview(backButton)
         
         initPlayer()
     }
@@ -59,6 +65,8 @@ class FTLiveDetailViewController: FTViewController {
         }
     }
     
+    //MAKR:private methods
+    
     func initPlayer() {
         
         if homeLiveModel != nil {
@@ -73,8 +81,14 @@ class FTLiveDetailViewController: FTViewController {
             
         }
     }
+    
+    //MARK: response methods
+    
+    func gotoBack(button: UIButton){
+        _ = navigationController?.popViewController(animated: true)
+    }
 
-    //转场动画
+    //MARK:转场动画
     override func captureViewAnimationFrame() -> CGRect {
         return UIScreen.main.bounds
     }
