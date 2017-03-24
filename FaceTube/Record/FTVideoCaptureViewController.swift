@@ -17,7 +17,7 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
     var currentVideoDeviceInput: AVCaptureDeviceInput!
     var videoToolBar: FTVideoCaptureToolBar!
     
-    //MARK: life cycle
+    //MARK: ************************  life cycle  ************************
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +46,11 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
     
     
     
+
+    //MARK: ************************  private methods  *****************
     
-    
-    
-    
-    
-    
-    
-    
-    //MARK: private methods
-    
-    /// 捕获音视频
-    func buildCaptureVideo() {
+    //MARK: 捕获音视频
+    fileprivate func buildCaptureVideo() {
         
         // 1. 创建捕获会话
         captureSession = AVCaptureSession()
@@ -115,7 +108,7 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
     }
 
     //获取摄像头
-    func getVideoDevice(position: AVCaptureDevicePosition) -> AVCaptureDevice? {
+    fileprivate func getVideoDevice(position: AVCaptureDevicePosition) -> AVCaptureDevice? {
         
         let devices: [Any]! = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
         for itm in devices {
@@ -128,11 +121,70 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
         }
         return nil
     }
+    
+    
+    
+    //MARK: 聚焦
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard let touch = touches.first else { return }
+        let point: CGPoint = touch.location(in: view)
+        
+        //把当前位置转换为摄像头点上的位置
+        let cameraPoint: CGPoint = previedLayer.captureDevicePointOfInterest(for: point)
+        
+        //设置光标位置
+        setFocusCursorWithPoint(point: point)
+        
+        //设置聚焦
+        setFocus(focusMode: .autoFocus, exposureMode: .autoExpose, atPoint: cameraPoint)
+        
+        
+    
+    }
+    
+    fileprivate func setFocusCursorWithPoint(point: CGPoint){
+        
+        
+        
+    }
+    
+    fileprivate func setFocus(focusMode: AVCaptureFocusMode,exposureMode: AVCaptureExposureMode,atPoint: CGPoint){
+        
+        let captureDevice: AVCaptureDevice = currentVideoDeviceInput.device
+        
+        do{
+            //锁定配置
+            try captureDevice.lockForConfiguration()
+            
+            //设置聚焦
+            if captureDevice.isFocusModeSupported(focusMode){
+                captureDevice.focusMode = focusMode
+            }
+            if captureDevice.isFocusPointOfInterestSupported{
+                captureDevice.focusPointOfInterest = atPoint
+            }
+            
+            //设置曝光
+            if captureDevice.isExposureModeSupported(exposureMode){
+                captureDevice.exposureMode = exposureMode
+            }
+            if captureDevice.isExposurePointOfInterestSupported{
+                captureDevice.exposurePointOfInterest = atPoint
+            }
+            
+            //解锁配置
+            captureDevice.unlockForConfiguration()
+            
+        }catch{}
+        
+    }
+    
+    
 }
 
 
-//MARK: FTVideoCaptureToolBarDelegate
-
+//MARK: ************************  FTVideoCaptureToolBarDelegate  ********************
 
 extension FTVideoCaptureViewController: FTVideoCaptureToolBarDelegate{
     

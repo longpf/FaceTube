@@ -40,7 +40,6 @@
 		D340A71B1E6030E30059E665 /* FaceTubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A71A1E6030E30059E665 /* FaceTubeUITests.swift */; };
 		D3452E6F1E76DE0900E86405 /* FTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */; };
 		D3452E711E76E66E00E86405 /* FTHomeLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3452E701E76E66E00E86405 /* FTHomeLiveTableViewCell.swift */; };
-		D3452E731E76E71800E86405 /* FTUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3452E721E76E71800E86405 /* FTUserView.swift */; };
 		D37216501E6FE0310098A907 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; };
 		D37216511E6FE05E0098A907 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; };
 		D37216521E6FE05E0098A907 /* IJKMediaFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -61,6 +60,8 @@
 		D372167B1E71A9A60098A907 /* FTTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372167A1E71A9A60098A907 /* FTTool.swift */; };
 		D3E83BD11E82AAC100AAABB9 /* FTVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */; };
 		D3F9AE421E839CD30053B543 /* FTVideoCaptureToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */; };
+		D3FA39851E85063600BA5279 /* FTFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA39841E85063600BA5279 /* FTFocusView.swift */; };
+		D3FA398A1E850D4B00BA5279 /* FTUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA39891E850D4B00BA5279 /* FTUserView.swift */; };
 		FBAEC164427E09B129F9D94E /* Pods_FaceTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 854F032D28A932DD74EE96DF /* Pods_FaceTube.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,7 +139,6 @@
 		D340A71C1E6030E30059E665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeViewController.swift; sourceTree = "<group>"; };
 		D3452E701E76E66E00E86405 /* FTHomeLiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveTableViewCell.swift; sourceTree = "<group>"; };
-		D3452E721E76E71800E86405 /* FTUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTUserView.swift; sourceTree = "<group>"; };
 		D372164F1E6FE0310098A907 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		D37216531E6FE1F80098A907 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D372165A1E70F4680098A907 /* FTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +157,8 @@
 		D372167A1E71A9A60098A907 /* FTTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTool.swift; sourceTree = "<group>"; };
 		D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureViewController.swift; sourceTree = "<group>"; };
 		D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureToolBar.swift; sourceTree = "<group>"; };
+		D3FA39841E85063600BA5279 /* FTFocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTFocusView.swift; sourceTree = "<group>"; };
+		D3FA39891E850D4B00BA5279 /* FTUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTUserView.swift; sourceTree = "<group>"; };
 		DB5DDF6C4F665789FF3ECF91 /* Pods-FaceTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceTube/Pods-FaceTube.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,7 +217,6 @@
 				D301153C1E68245000829A34 /* FTHTTPClient.swift */,
 				D372166A1E7124A30098A907 /* FTIJKPlayerController.swift */,
 				D372167A1E71A9A60098A907 /* FTTool.swift */,
-				D3452E721E76E71800E86405 /* FTUserView.swift */,
 				D334D1E11E77B50700F67BAA /* FTFont.swift */,
 				D334D2251E77C36400F67BAA /* FTColor.swift */,
 				D334D2291E781ED400F67BAA /* FTValidObject.swift */,
@@ -270,6 +271,7 @@
 		D334D26F1E7916D700F67BAA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D3FA39861E850D3700BA5279 /* View */,
 				D334D2B21E79427A00F67BAA /* Model */,
 				D334D2B71E79899E00F67BAA /* Common.xcassets */,
 			);
@@ -408,6 +410,7 @@
 		D3F9AE3E1E8397EA0053B543 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
+				D3FA39841E85063600BA5279 /* FTFocusView.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -423,6 +426,14 @@
 			isa = PBXGroup;
 			children = (
 				D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3FA39861E850D3700BA5279 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3FA39891E850D4B00BA5279 /* FTUserView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -641,8 +652,9 @@
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
 				D334D22A1E781ED400F67BAA /* FTValidObject.swift in Sources */,
 				D334D2B61E794A7200F67BAA /* FTLiveLabel.swift in Sources */,
-				D3452E731E76E71800E86405 /* FTUserView.swift in Sources */,
+				D3FA39851E85063600BA5279 /* FTFocusView.swift in Sources */,
 				D334D1E21E77B50700F67BAA /* FTFont.swift in Sources */,
+				D3FA398A1E850D4B00BA5279 /* FTUserView.swift in Sources */,
 				D37216741E7128A00098A907 /* FTDataSource.swift in Sources */,
 				D372166B1E7124A30098A907 /* FTIJKPlayerController.swift in Sources */,
 				D37216611E70F50B0098A907 /* FTTableViewCell.swift in Sources */,
