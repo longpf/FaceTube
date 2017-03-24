@@ -42,7 +42,7 @@ class FTTabbarContrller: UITabBarController {
         
         
         //record
-        let recordViewController = FTViewController()
+        let recordViewController = FTVideoCaptureViewController()
         recordViewController.view.backgroundColor = UIColor.backgroundColor()
         let recordTabBarItem: UITabBarItem = UITabBarItem.init(title: nil, image: UIImage.init(named: "ft_tabbar_record"), selectedImage: UIImage.init(named: "ft_tabbar_record_hl"))
         recordTabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)

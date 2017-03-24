@@ -59,6 +59,8 @@
 		D37216741E7128A00098A907 /* FTDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216731E7128A00098A907 /* FTDataSource.swift */; };
 		D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */; };
 		D372167B1E71A9A60098A907 /* FTTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372167A1E71A9A60098A907 /* FTTool.swift */; };
+		D3E83BD11E82AAC100AAABB9 /* FTVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */; };
+		D3F9AE421E839CD30053B543 /* FTVideoCaptureToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */; };
 		FBAEC164427E09B129F9D94E /* Pods_FaceTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 854F032D28A932DD74EE96DF /* Pods_FaceTube.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +155,8 @@
 		D37216731E7128A00098A907 /* FTDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDataSource.swift; sourceTree = "<group>"; };
 		D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveDataSource.swift; sourceTree = "<group>"; };
 		D372167A1E71A9A60098A907 /* FTTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTool.swift; sourceTree = "<group>"; };
+		D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureViewController.swift; sourceTree = "<group>"; };
+		D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureToolBar.swift; sourceTree = "<group>"; };
 		DB5DDF6C4F665789FF3ECF91 /* Pods-FaceTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceTube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceTube/Pods-FaceTube.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +211,7 @@
 		D301153B1E6823CE00829A34 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				D3F9AE3E1E8397EA0053B543 /* Capture */,
 				D301153C1E68245000829A34 /* FTHTTPClient.swift */,
 				D372166A1E7124A30098A907 /* FTIJKPlayerController.swift */,
 				D372167A1E71A9A60098A907 /* FTTool.swift */,
@@ -309,6 +314,7 @@
 				D340A6F91E6030E20059E665 /* ViewController.swift */,
 				D340A6FB1E6030E20059E665 /* Main.storyboard */,
 				D325D5E31E66D71D00CB9EEF /* Home */,
+				D3E83BCF1E82AA4900AAABB9 /* Record */,
 				D325D5DB1E66C63A00CB9EEF /* Shelf */,
 				D334D26F1E7916D700F67BAA /* Common */,
 				D301153B1E6823CE00829A34 /* Tool */,
@@ -387,6 +393,38 @@
 				D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D3E83BCF1E82AA4900AAABB9 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */,
+				D3F9AE3F1E839CA40053B543 /* Model */,
+				D3F9AE401E839CAA0053B543 /* View */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		D3F9AE3E1E8397EA0053B543 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		D3F9AE3F1E839CA40053B543 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3F9AE401E839CAA0053B543 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,9 +631,11 @@
 				D334D2711E79177400F67BAA /* FTLiveDetailViewController.swift in Sources */,
 				D37216691E70F5600098A907 /* FTMutableDictionary.swift in Sources */,
 				D3452E711E76E66E00E86405 /* FTHomeLiveTableViewCell.swift in Sources */,
+				D3F9AE421E839CD30053B543 /* FTVideoCaptureToolBar.swift in Sources */,
 				D372165D1E70F4810098A907 /* FTView.swift in Sources */,
 				D37216651E70F52F0098A907 /* FTMutableArray.swift in Sources */,
 				D372165F1E70F4FC0098A907 /* FTTableView.swift in Sources */,
+				D3E83BD11E82AAC100AAABB9 /* FTVideoCaptureViewController.swift in Sources */,
 				D334D2B41E7942BE00F67BAA /* FTLiveUser.swift in Sources */,
 				D3452E6F1E76DE0900E86405 /* FTHomeViewController.swift in Sources */,
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
