@@ -16,6 +16,7 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
     var previedLayer: AVCaptureVideoPreviewLayer!
     var currentVideoDeviceInput: AVCaptureDeviceInput!
     var videoToolBar: FTVideoCaptureToolBar!
+    var focusView: FTFocusView!
     
     //MARK: ************************  life cycle  ************************
     
@@ -29,6 +30,8 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
             make.leading.trailing.top.equalTo(view)
             make.height.equalTo(40)
         }
+        
+        focusView = FTFocusView.init(frame: CGRect.zero)
         
     }
     
@@ -140,13 +143,18 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
         setFocus(focusMode: .autoFocus, exposureMode: .autoExpose, atPoint: cameraPoint)
         
         
-    
     }
     
     fileprivate func setFocusCursorWithPoint(point: CGPoint){
         
-        
-        
+        focusView.center = point
+        if (focusView != nil && focusView.superview == nil){
+            view.addSubview(focusView)
+        }else{
+            NSObject.cancelPreviousPerformRequests(withTarget: focusView)
+        }
+        focusView.startAnimation()
+        focusView.perform(Selector(("stopAnimation")), with: nil, afterDelay: 2)
     }
     
     fileprivate func setFocus(focusMode: AVCaptureFocusMode,exposureMode: AVCaptureExposureMode,atPoint: CGPoint){
