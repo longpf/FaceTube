@@ -44,50 +44,47 @@ class FTVideoCaptureToolBar: FTView {
         
         closeButton = UIButton()
         closeButton.setTitle("关闭", for: .normal)
-        closeButton.backgroundColor = UIColor.lightGray
         closeButton.addTarget(self, action: #selector(closeAction(button:)), for: .touchUpInside)
         self.addSubview(closeButton)
         
         beautyButton = UIButton()
         beautyButton.setTitle("美颜", for: .normal)
-        beautyButton.backgroundColor = UIColor.lightGray
         beautyButton.addTarget(self, action: #selector(beautyAction(button:)), for: .touchUpInside)
         self.addSubview(beautyButton)
         
         flashButton = UIButton()
         flashButton.setTitle("闪关灯", for: .normal)
-        flashButton.backgroundColor = UIColor.lightGray
         flashButton.addTarget(self, action: #selector(flashAction(button:)), for: .touchUpInside)
         self.addSubview(flashButton)
         
         cameraSwitchButton = UIButton()
         cameraSwitchButton.setTitle("切换", for: .normal)
-        cameraSwitchButton.backgroundColor = UIColor.lightGray
         cameraSwitchButton.addTarget(self, action: #selector(camerSwitchButton(button:)), for: .touchUpInside)
         self.addSubview(cameraSwitchButton)
         
         closeButton.snp.makeConstraints { (make) in
-            make.leading.equalTo(self.snp.leading).offset(10)
+            make.leading.equalTo(self.snp.leading).offset(0)
             make.top.bottom.equalTo(self)
-            make.width.equalTo(60)
+            make.width.equalTo(beautyButton.snp.width)
         }
         
         beautyButton.snp.makeConstraints { (make) in
-            make.leading.equalTo(closeButton.snp.trailing).offset(30)
+            make.leading.equalTo(closeButton.snp.trailing)
             make.top.bottom.equalTo(self)
-            make.width.equalTo(60)
+            make.width.equalTo(beautyButton.snp.width)
         }
         
         flashButton.snp.makeConstraints { (make) in
-            make.leading.equalTo(beautyButton.snp.trailing).offset(30)
+            make.leading.equalTo(beautyButton.snp.trailing)
             make.top.bottom.equalTo(self)
-            make.width.equalTo(60)
+            make.width.equalTo(beautyButton.snp.width)
         }
         
         cameraSwitchButton.snp.makeConstraints { (make) in
-            make.leading.equalTo(flashButton.snp.trailing).offset(30)
+            make.leading.equalTo(flashButton.snp.trailing)
+            make.trailing.equalTo(self.snp.trailing)
             make.top.bottom.equalTo(self)
-            make.width.equalTo(50)
+            make.width.equalTo(beautyButton.snp.width)
         }
         
     }

@@ -22,7 +22,6 @@
 		D325D5FE1E67C93100CB9EEF /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D325D5FD1E67C93100CB9EEF /* VideoToolbox.framework */; };
 		D334D1E21E77B50700F67BAA /* FTFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D1E11E77B50700F67BAA /* FTFont.swift */; };
 		D334D2261E77C36400F67BAA /* FTColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2251E77C36400F67BAA /* FTColor.swift */; };
-		D334D2281E77D42100F67BAA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2271E77D42100F67BAA /* File.swift */; };
 		D334D22A1E781ED400F67BAA /* FTValidObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2291E781ED400F67BAA /* FTValidObject.swift */; };
 		D334D26E1E78FF8100F67BAA /* Shelf.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D334D26D1E78FF8100F67BAA /* Shelf.xcassets */; };
 		D334D2711E79177400F67BAA /* FTLiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2701E79177400F67BAA /* FTLiveDetailViewController.swift */; };
@@ -59,6 +58,7 @@
 		D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */; };
 		D372167B1E71A9A60098A907 /* FTTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372167A1E71A9A60098A907 /* FTTool.swift */; };
 		D3E83BD11E82AAC100AAABB9 /* FTVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */; };
+		D3F055941E8B895800B792D7 /* Record.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F055931E8B895800B792D7 /* Record.xcassets */; };
 		D3F9AE421E839CD30053B543 /* FTVideoCaptureToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */; };
 		D3FA39851E85063600BA5279 /* FTFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA39841E85063600BA5279 /* FTFocusView.swift */; };
 		D3FA398A1E850D4B00BA5279 /* FTUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA39891E850D4B00BA5279 /* FTUserView.swift */; };
@@ -116,7 +116,6 @@
 		D325D5FD1E67C93100CB9EEF /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		D334D1E11E77B50700F67BAA /* FTFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTFont.swift; sourceTree = "<group>"; };
 		D334D2251E77C36400F67BAA /* FTColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTColor.swift; sourceTree = "<group>"; };
-		D334D2271E77D42100F67BAA /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		D334D2291E781ED400F67BAA /* FTValidObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTValidObject.swift; sourceTree = "<group>"; };
 		D334D26D1E78FF8100F67BAA /* Shelf.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Shelf.xcassets; sourceTree = "<group>"; };
 		D334D2701E79177400F67BAA /* FTLiveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTLiveDetailViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +156,7 @@
 		D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveDataSource.swift; sourceTree = "<group>"; };
 		D372167A1E71A9A60098A907 /* FTTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTool.swift; sourceTree = "<group>"; };
 		D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureViewController.swift; sourceTree = "<group>"; };
+		D3F055931E8B895800B792D7 /* Record.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Record.xcassets; sourceTree = "<group>"; };
 		D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureToolBar.swift; sourceTree = "<group>"; };
 		D3FA39841E85063600BA5279 /* FTFocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTFocusView.swift; sourceTree = "<group>"; };
 		D3FA39891E850D4B00BA5279 /* FTUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTUserView.swift; sourceTree = "<group>"; };
@@ -242,7 +242,6 @@
 			children = (
 				D3452E6E1E76DE0800E86405 /* FTHomeViewController.swift */,
 				D334D2701E79177400F67BAA /* FTLiveDetailViewController.swift */,
-				D334D2271E77D42100F67BAA /* File.swift */,
 				D37216751E7134670098A907 /* DataSource */,
 				D372166C1E7125050098A907 /* Model */,
 				D372166D1E7125050098A907 /* View */,
@@ -406,6 +405,7 @@
 				D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */,
 				D3F9AE3F1E839CA40053B543 /* Model */,
 				D3F9AE401E839CAA0053B543 /* View */,
+				D3F055931E8B895800B792D7 /* Record.xcassets */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -555,6 +555,7 @@
 			files = (
 				D334D26E1E78FF8100F67BAA /* Shelf.xcassets in Resources */,
 				D340A7051E6030E20059E665 /* LaunchScreen.storyboard in Resources */,
+				D3F055941E8B895800B792D7 /* Record.xcassets in Resources */,
 				D334D2B81E79899E00F67BAA /* Common.xcassets in Resources */,
 				D340A7021E6030E20059E665 /* Assets.xcassets in Resources */,
 				D325D5E71E66DA5D00CB9EEF /* Home.xcassets in Resources */,
@@ -633,7 +634,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D334D2BA1E7997AA00F67BAA /* FTMagicMoveTransion.swift in Sources */,
-				D334D2281E77D42100F67BAA /* File.swift in Sources */,
 				D37216631E70F5200098A907 /* FTArray.swift in Sources */,
 				D334D2261E77C36400F67BAA /* FTColor.swift in Sources */,
 				D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */,

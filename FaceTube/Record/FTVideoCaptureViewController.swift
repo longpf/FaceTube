@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureAudioDataOutputSampleBufferDelegate {
+class FTVideoCaptureViewController: FTViewController,AVCaptureAudioDataOutputSampleBufferDelegate {
 
     var captureSession: AVCaptureSession!
     var videoConnection: AVCaptureConnection!
@@ -38,11 +38,29 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
     override func viewWillAppear(_ animated: Bool) {
         if (captureSession == nil) {
             buildCaptureVideo()
+        }else{
+            captureSession .startRunning()
         }
+        UIApplication.shared.setStatusBarHidden(true, with: .none)
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let tabbarController = tabBarController as? FTTabbarContrller{
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5, execute: {
+                tabbarController.showTabBar(show: false, aniamtie: true)
+            })
+        }
+        
+        
+    }
     
+    override var prefersStatusBarHidden: Bool{
+        return true;
+    }
     
     
     
@@ -191,13 +209,20 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureVideoDataOutputSam
     
 }
 
-
-//MARK: ************************  FTVideoCaptureToolBarDelegate  ********************
+extension FTVideoCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate{
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        
+    }
+}
 
 extension FTVideoCaptureViewController: FTVideoCaptureToolBarDelegate{
     
     func videoCaptureToolBarClose(){
-        
+        if let tabbarController = tabBarController as? FTTabbarContrller{
+            tabbarController.showTabBar(show: true, aniamtie: false)
+        }
+        tabBarController?.selectedIndex = 0
     }
     
     func videoCaptureToolBarBeauty(){

@@ -11,7 +11,7 @@ import AMScrollingNavbar
 
 class FTTabbarContrller: UITabBarController {
 
-    //MARK:lift cycle
+    //MARK: ************************  life cycle  ************************
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,34 @@ class FTTabbarContrller: UITabBarController {
         self.addChildViewControllers()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    //MARK: ************************  interface methods  ***************
     
+    open func showTabBar(show: Bool , aniamtie: Bool){
+        
+        if show {
+            
+            if aniamtie{
+                UIView.transition(with: tabBar, duration: 0.3, options: .curveLinear, animations: {
+                    self.tabBar.layer.transform = CATransform3DMakeTranslation(0, 0, 0)
+                }, completion: nil)
+            }else{
+                self.tabBar.layer.transform = CATransform3DMakeTranslation(0, 0, 0)
+            }
+            
+            
+        }else{
+            
+            tabBar.layer.removeAllAnimations()
+            
+            if aniamtie{
+                UIView.transition(with: tabBar, duration: 0.3, options: .curveLinear, animations: {
+                    self.tabBar.layer.transform = CATransform3DMakeTranslation(0, 60, 0)
+                }, completion: nil)
+            }else{
+                self.tabBar.layer.transform = CATransform3DMakeTranslation(0, 60, 0)
+            }
+        }
+    }
     
     
     //MARK:private methods
