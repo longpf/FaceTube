@@ -43,25 +43,21 @@ class FTVideoCaptureToolBar: FTView {
         self.backgroundColor = UIColor.clear
         
         closeButton = UIButton()
-//        closeButton.setTitle("关闭", for: .normal)
         closeButton.setImage(UIImage.init(named: "ft_record_close"), for: .normal)
         closeButton.addTarget(self, action: #selector(closeAction(button:)), for: .touchUpInside)
         self.addSubview(closeButton)
         
         beautyButton = UIButton()
-//        beautyButton.setTitle("美颜", for: .normal)
         beautyButton.setImage(UIImage.init(named: "ft_record_beauty_on"), for: .normal)
         beautyButton.addTarget(self, action: #selector(beautyAction(button:)), for: .touchUpInside)
         self.addSubview(beautyButton)
         
         flashButton = UIButton()
-//        flashButton.setTitle("闪关灯", for: .normal)
         flashButton.setImage(UIImage.init(named: "ft_record_flash_off"), for: .normal)
         flashButton.addTarget(self, action: #selector(flashAction(button:)), for: .touchUpInside)
         self.addSubview(flashButton)
         
         cameraSwitchButton = UIButton()
-//        cameraSwitchButton.setTitle("切换", for: .normal)
         cameraSwitchButton.setImage(UIImage.init(named: "ft_record_switch_camera"), for: .normal)
         cameraSwitchButton.addTarget(self, action: #selector(camerSwitchButton(button:)), for: .touchUpInside)
         self.addSubview(cameraSwitchButton)
