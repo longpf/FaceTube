@@ -29,6 +29,8 @@
 		D334D2B61E794A7200F67BAA /* FTLiveLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2B51E794A7200F67BAA /* FTLiveLabel.swift */; };
 		D334D2B81E79899E00F67BAA /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D334D2B71E79899E00F67BAA /* Common.xcassets */; };
 		D334D2BA1E7997AA00F67BAA /* FTMagicMoveTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D334D2B91E7997AA00F67BAA /* FTMagicMoveTransion.swift */; };
+		D33B8A741E94D1B500592F5C /* FTContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B8A731E94D1B500592F5C /* FTContextManager.swift */; };
+		D33B8A761E94EF3500592F5C /* FTCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33B8A751E94EF3500592F5C /* FTCamera.swift */; };
 		D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F71E6030E20059E665 /* AppDelegate.swift */; };
 		D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D340A6F91E6030E20059E665 /* ViewController.swift */; };
 		D340A6FD1E6030E20059E665 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D340A6FB1E6030E20059E665 /* Main.storyboard */; };
@@ -57,6 +59,7 @@
 		D37216741E7128A00098A907 /* FTDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216731E7128A00098A907 /* FTDataSource.swift */; };
 		D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */; };
 		D372167B1E71A9A60098A907 /* FTTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372167A1E71A9A60098A907 /* FTTool.swift */; };
+		D3D77E221E95FC8200A6440D /* FTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E211E95FC8200A6440D /* FTError.swift */; };
 		D3E83BD11E82AAC100AAABB9 /* FTVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */; };
 		D3F055941E8B895800B792D7 /* Record.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F055931E8B895800B792D7 /* Record.xcassets */; };
 		D3F9AE421E839CD30053B543 /* FTVideoCaptureToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */; };
@@ -123,6 +126,8 @@
 		D334D2B51E794A7200F67BAA /* FTLiveLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTLiveLabel.swift; sourceTree = "<group>"; };
 		D334D2B71E79899E00F67BAA /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
 		D334D2B91E7997AA00F67BAA /* FTMagicMoveTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMagicMoveTransion.swift; sourceTree = "<group>"; };
+		D33B8A731E94D1B500592F5C /* FTContextManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTContextManager.swift; sourceTree = "<group>"; };
+		D33B8A751E94EF3500592F5C /* FTCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTCamera.swift; sourceTree = "<group>"; };
 		D340A6F41E6030E20059E665 /* FaceTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D340A6F71E6030E20059E665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D340A6F91E6030E20059E665 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		D37216731E7128A00098A907 /* FTDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDataSource.swift; sourceTree = "<group>"; };
 		D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveDataSource.swift; sourceTree = "<group>"; };
 		D372167A1E71A9A60098A907 /* FTTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTool.swift; sourceTree = "<group>"; };
+		D3D77E211E95FC8200A6440D /* FTError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTError.swift; sourceTree = "<group>"; };
 		D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureViewController.swift; sourceTree = "<group>"; };
 		D3F055931E8B895800B792D7 /* Record.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Record.xcassets; sourceTree = "<group>"; };
 		D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureToolBar.swift; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 		D334D26F1E7916D700F67BAA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D3D77E211E95FC8200A6440D /* FTError.swift */,
 				D3FA39861E850D3700BA5279 /* View */,
 				D334D2B21E79427A00F67BAA /* Model */,
 				D334D2B71E79899E00F67BAA /* Common.xcassets */,
@@ -414,6 +421,8 @@
 			isa = PBXGroup;
 			children = (
 				D3FA39841E85063600BA5279 /* FTFocusView.swift */,
+				D33B8A731E94D1B500592F5C /* FTContextManager.swift */,
+				D33B8A751E94EF3500592F5C /* FTCamera.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -656,12 +665,15 @@
 				D340A6F81E6030E20059E665 /* AppDelegate.swift in Sources */,
 				D334D22A1E781ED400F67BAA /* FTValidObject.swift in Sources */,
 				D334D2B61E794A7200F67BAA /* FTLiveLabel.swift in Sources */,
+				D3D77E221E95FC8200A6440D /* FTError.swift in Sources */,
 				D3FA39851E85063600BA5279 /* FTFocusView.swift in Sources */,
 				D334D1E21E77B50700F67BAA /* FTFont.swift in Sources */,
+				D33B8A741E94D1B500592F5C /* FTContextManager.swift in Sources */,
 				D3FA398A1E850D4B00BA5279 /* FTUserView.swift in Sources */,
 				D37216741E7128A00098A907 /* FTDataSource.swift in Sources */,
 				D372166B1E7124A30098A907 /* FTIJKPlayerController.swift in Sources */,
 				D37216611E70F50B0098A907 /* FTTableViewCell.swift in Sources */,
+				D33B8A761E94EF3500592F5C /* FTCamera.swift in Sources */,
 				D340A7001E6030E20059E665 /* FaceTube.xcdatamodeld in Sources */,
 				D372165B1E70F4680098A907 /* FTViewController.swift in Sources */,
 				D37216721E7128140098A907 /* FTHomeLiveModel.swift in Sources */,

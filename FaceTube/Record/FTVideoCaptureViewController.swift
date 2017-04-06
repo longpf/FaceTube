@@ -33,6 +33,9 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureAudioDataOutputSam
         
         focusView = FTFocusView.init(frame: CGRect.zero)
         
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
