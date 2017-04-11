@@ -52,6 +52,8 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
         
         //获取数据
         self.tableView.mj_header.beginRefreshing()
+        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {

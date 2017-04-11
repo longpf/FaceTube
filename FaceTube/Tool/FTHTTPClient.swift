@@ -49,8 +49,6 @@ class FTHTTPClient: NSObject {
                     case .failure(let error):
                         fail(error)
                 }
-                
-        
         }
     }
 }

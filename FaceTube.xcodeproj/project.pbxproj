@@ -60,7 +60,12 @@
 		D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */; };
 		D372167B1E71A9A60098A907 /* FTTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372167A1E71A9A60098A907 /* FTTool.swift */; };
 		D3D77E221E95FC8200A6440D /* FTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E211E95FC8200A6440D /* FTError.swift */; };
+		D3D77E661E9B1DDD00A6440D /* FTMovieWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E651E9B1DDD00A6440D /* FTMovieWriter.swift */; };
+		D3D77E681E9B28F400A6440D /* FTPhotoFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E671E9B28F400A6440D /* FTPhotoFilters.swift */; };
+		D3D77E6A1E9B330300A6440D /* FTString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E691E9B330300A6440D /* FTString.swift */; };
 		D3E83BD11E82AAC100AAABB9 /* FTVideoCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */; };
+		D3ED304D1E9CB92600BBAD55 /* FTNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ED304C1E9CB92600BBAD55 /* FTNotifications.swift */; };
+		D3ED304F1E9D084B00BBAD55 /* FTDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3ED304E1E9D084B00BBAD55 /* FTDevice.swift */; };
 		D3F055941E8B895800B792D7 /* Record.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3F055931E8B895800B792D7 /* Record.xcassets */; };
 		D3F9AE421E839CD30053B543 /* FTVideoCaptureToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */; };
 		D3FA39851E85063600BA5279 /* FTFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FA39841E85063600BA5279 /* FTFocusView.swift */; };
@@ -161,7 +166,12 @@
 		D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveDataSource.swift; sourceTree = "<group>"; };
 		D372167A1E71A9A60098A907 /* FTTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTool.swift; sourceTree = "<group>"; };
 		D3D77E211E95FC8200A6440D /* FTError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTError.swift; sourceTree = "<group>"; };
+		D3D77E651E9B1DDD00A6440D /* FTMovieWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMovieWriter.swift; sourceTree = "<group>"; };
+		D3D77E671E9B28F400A6440D /* FTPhotoFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPhotoFilters.swift; sourceTree = "<group>"; };
+		D3D77E691E9B330300A6440D /* FTString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTString.swift; sourceTree = "<group>"; };
 		D3E83BD01E82AAC000AAABB9 /* FTVideoCaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureViewController.swift; sourceTree = "<group>"; };
+		D3ED304C1E9CB92600BBAD55 /* FTNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTNotifications.swift; sourceTree = "<group>"; };
+		D3ED304E1E9D084B00BBAD55 /* FTDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDevice.swift; sourceTree = "<group>"; };
 		D3F055931E8B895800B792D7 /* Record.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Record.xcassets; sourceTree = "<group>"; };
 		D3F9AE411E839CD30053B543 /* FTVideoCaptureToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTVideoCaptureToolBar.swift; sourceTree = "<group>"; };
 		D3FA39841E85063600BA5279 /* FTFocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTFocusView.swift; sourceTree = "<group>"; };
@@ -229,6 +239,8 @@
 				D334D2251E77C36400F67BAA /* FTColor.swift */,
 				D334D2291E781ED400F67BAA /* FTValidObject.swift */,
 				D334D2B91E7997AA00F67BAA /* FTMagicMoveTransion.swift */,
+				D3D77E691E9B330300A6440D /* FTString.swift */,
+				D3ED304E1E9D084B00BBAD55 /* FTDevice.swift */,
 				D3FA398B1E8511D100BA5279 /* Tool.xcassets */,
 			);
 			path = Tool;
@@ -280,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				D3D77E211E95FC8200A6440D /* FTError.swift */,
+				D3ED304C1E9CB92600BBAD55 /* FTNotifications.swift */,
 				D3FA39861E850D3700BA5279 /* View */,
 				D334D2B21E79427A00F67BAA /* Model */,
 				D334D2B71E79899E00F67BAA /* Common.xcassets */,
@@ -423,6 +436,8 @@
 				D3FA39841E85063600BA5279 /* FTFocusView.swift */,
 				D33B8A731E94D1B500592F5C /* FTContextManager.swift */,
 				D33B8A751E94EF3500592F5C /* FTCamera.swift */,
+				D3D77E651E9B1DDD00A6440D /* FTMovieWriter.swift */,
+				D3D77E671E9B28F400A6440D /* FTPhotoFilters.swift */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -648,13 +663,16 @@
 				D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */,
 				D301153D1E68245000829A34 /* FTHTTPClient.swift in Sources */,
 				D37216701E7125A80098A907 /* FTModel.swift in Sources */,
+				D3D77E6A1E9B330300A6440D /* FTString.swift in Sources */,
 				D340A6FA1E6030E20059E665 /* ViewController.swift in Sources */,
 				D37216671E70F5410098A907 /* FTDictionary.swift in Sources */,
+				D3D77E681E9B28F400A6440D /* FTPhotoFilters.swift in Sources */,
 				D372167B1E71A9A60098A907 /* FTTool.swift in Sources */,
 				D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */,
 				D334D2711E79177400F67BAA /* FTLiveDetailViewController.swift in Sources */,
 				D37216691E70F5600098A907 /* FTMutableDictionary.swift in Sources */,
 				D3452E711E76E66E00E86405 /* FTHomeLiveTableViewCell.swift in Sources */,
+				D3D77E661E9B1DDD00A6440D /* FTMovieWriter.swift in Sources */,
 				D3F9AE421E839CD30053B543 /* FTVideoCaptureToolBar.swift in Sources */,
 				D372165D1E70F4810098A907 /* FTView.swift in Sources */,
 				D37216651E70F52F0098A907 /* FTMutableArray.swift in Sources */,
@@ -674,8 +692,10 @@
 				D372166B1E7124A30098A907 /* FTIJKPlayerController.swift in Sources */,
 				D37216611E70F50B0098A907 /* FTTableViewCell.swift in Sources */,
 				D33B8A761E94EF3500592F5C /* FTCamera.swift in Sources */,
+				D3ED304F1E9D084B00BBAD55 /* FTDevice.swift in Sources */,
 				D340A7001E6030E20059E665 /* FaceTube.xcdatamodeld in Sources */,
 				D372165B1E70F4680098A907 /* FTViewController.swift in Sources */,
+				D3ED304D1E9CB92600BBAD55 /* FTNotifications.swift in Sources */,
 				D37216721E7128140098A907 /* FTHomeLiveModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
