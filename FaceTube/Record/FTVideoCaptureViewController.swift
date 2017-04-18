@@ -33,9 +33,6 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureAudioDataOutputSam
         
         focusView = FTFocusView.init(frame: CGRect.zero)
         
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,8 +54,6 @@ class FTVideoCaptureViewController: FTViewController,AVCaptureAudioDataOutputSam
                 tabbarController.showTabBar(show: false, aniamtie: true)
             })
         }
-        
-        
     }
     
     override var prefersStatusBarHidden: Bool{
@@ -229,7 +224,8 @@ extension FTVideoCaptureViewController: FTVideoCaptureToolBarDelegate{
     }
     
     func videoCaptureToolBarBeauty(){
-        
+        let con = FTCaptureViewController()
+        self.navigationController?.pushViewController(con, animated: true)
     }
     
     //闪光灯

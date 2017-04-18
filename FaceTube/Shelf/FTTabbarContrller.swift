@@ -72,8 +72,16 @@ class FTTabbarContrller: UITabBarController {
         recordViewController.tabBarItem = recordTabBarItem
         let recordNav: ScrollingNavigationController = ScrollingNavigationController.init(rootViewController: recordViewController)
         
+        //capture
+        let captureViewController = FTCaptureViewController()
+        captureViewController.view.backgroundColor = UIColor.backgroundColor()
+        let captureTabBarItem: UITabBarItem = UITabBarItem.init(title: nil, image: UIImage.init(named: "ft_tabbar_record"), selectedImage: UIImage.init(named: "ft_tabbar_record_hl"))
+        captureTabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+        captureViewController.tabBarItem = captureTabBarItem
+        let captureNav: ScrollingNavigationController = ScrollingNavigationController.init(rootViewController: captureViewController)
         
-        let controllers = NSArray.init(array:[homeNav,recordNav])
+        
+        let controllers = NSArray.init(array:[homeNav,captureNav])
         
         
         self.viewControllers = controllers as? [UIViewController]

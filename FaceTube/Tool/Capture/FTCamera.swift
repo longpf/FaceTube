@@ -8,11 +8,14 @@
 
 import UIKit
 
-class FTCamera: NSObject {
+class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureAudioDataOutputSampleBufferDelegate {
 
     //捕获会话
     public private(set) var captureSession: AVCaptureSession!
     public private(set) var cameraQueue: DispatchQueue!
+    public private(set) var recording: Bool!
+    public var imageTarget: FTImageTarget?
+    
     
     //视频数据输出设备
     fileprivate var videoDataOutput: AVCaptureVideoDataOutput?
@@ -20,7 +23,9 @@ class FTCamera: NSObject {
     fileprivate var audioDataOutput: AVCaptureAudioDataOutput?
     fileprivate var activeVideoInput: AVCaptureDeviceInput?
     
-    fileprivate override init() {
+    fileprivate var movieWriter: FTMovieWriter?
+    
+    override init() {
         
         cameraQueue = DispatchQueue.init(label: "com.facetube.camera")
         
@@ -28,15 +33,24 @@ class FTCamera: NSObject {
     
     //MARK:session
     
-    public func setupSession(_ error: NSErrorPointer){
+    public func setupSession(_ error: NSErrorPointer) -> Bool{
         
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = sessionPreset() as String!
         
+        if !setupSessinInputs(error) {
+            return false
+        }
+        
+        if !setupSessionOutputs(error){
+            return false
+        }
+        
+        return true
     }
     
     public func sessionPreset() -> NSString {
-        return AVCaptureSessionPresetHigh as NSString
+        return AVCaptureSessionPreset1280x720 as NSString
     }
     
     public func setupSessinInputs(_ error: NSErrorPointer) -> Bool{
@@ -74,15 +88,30 @@ class FTCamera: NSObject {
         
         videoDataOutput = AVCaptureVideoDataOutput()
         //kCVPixelBufferPixelFormatTypeKey用来指定像素的输出格式
-        videoDataOutput?.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable:kCVPixelFormatType_32BGRA]
+        videoDataOutput?.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable:NSNumber.init(value: kCVPixelFormatType_32BGRA)]
+        videoDataOutput?.alwaysDiscardsLateVideoFrames = false
         videoDataOutput?.setSampleBufferDelegate(self, queue: cameraQueue)
+        
+        if self.captureSession.canAddOutput(self.videoDataOutput) {
+            self.captureSession.addOutput(self.videoDataOutput)
+        }else{
+            return false
+        }
         
         audioDataOutput = AVCaptureAudioDataOutput()
         audioDataOutput?.setSampleBufferDelegate(self, queue: cameraQueue)
         
+        if self.captureSession.canAddOutput(self.audioDataOutput){
+            self.captureSession.addOutput(self.audioDataOutput)
+        }else{
+            return false
+        }
+        
         let videoSettings = videoDataOutput?.recommendedVideoSettingsForAssetWriter(withOutputFileType: AVFileTypeQuickTimeMovie)
         let audioSettings = audioDataOutput?.recommendedAudioSettingsForAssetWriter(withOutputFileType: AVFileTypeQuickTimeMovie)
         
+        movieWriter = FTMovieWriter.init(videoSettings: videoSettings!, audioSettings: audioSettings!, dispatchQueue: cameraQueue)
+        movieWriter?.delegate = self
         
         return true
     }
@@ -94,7 +123,6 @@ class FTCamera: NSObject {
                 self.captureSession.startRunning()
             }
         }
-        
     }
     
     public func stopSession() {
@@ -103,6 +131,16 @@ class FTCamera: NSObject {
             self.captureSession.stopRunning()
         }
         
+    }
+    
+    public func startRecording(){
+        movieWriter?.startWriting()
+        recording = true
+    }
+    
+    public func stopRecording() {
+        movieWriter?.stopWriting()
+        recording = false
     }
     
     //MARK:device
@@ -172,12 +210,27 @@ class FTCamera: NSObject {
         return false
     }
     
-}
-
-extension FTCamera: AVCaptureVideoDataOutputSampleBufferDelegate{
+    //MARK:AVCaptureVideoDataOutputSampleBufferDelegate
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        movieWriter?.processSampleBuffer(sampleBuffer: sampleBuffer)
+        
+        if captureOutput == videoDataOutput{
+            let imageBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
+            let sourceImage = CIImage.init(cvPixelBuffer: imageBuffer)
+            self.imageTarget?.setImage!(image: sourceImage)
+        }
+        
+    }
     
 }
 
-extension FTCamera: AVCaptureAudioDataOutputSampleBufferDelegate{
+extension FTCamera: FTMovieWriterDelegate {
+    func didWriteMovieAtURL(outputURL: NSURL) {
+        UISaveVideoAtPathToSavedPhotosAlbum(outputURL.path!, self, Selector(("video:didFinishSavingWithError:contextInfo:")), nil)
+    }
     
+    func video(videoPath: String, didFinishSavingWithError error: NSError, contextInfo info: UnsafeMutableRawPointer) {
+
+        
+    }
 }

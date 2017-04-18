@@ -19,7 +19,7 @@ final class FTContextManager: NSObject {
     private override init() {
         
         eaglContext = EAGLContext.init(api: .openGLES2)
-        ciContext = CIContext.init(options: [kCIContextWorkingColorSpace:NSNull.init()])
+        ciContext = CIContext.init(eaglContext: eaglContext, options: [kCIContextWorkingColorSpace:NSNull.init()])
         
     }
 
