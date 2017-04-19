@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+/// 聚焦的view
 class FTFocusView: FTView {
     
     fileprivate var focusImageView: UIImageView!

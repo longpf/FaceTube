@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+/// 滤镜类
 class FTPhotoFilters: NSObject {
 
     public class func filterNames() -> [String] {
@@ -37,7 +39,7 @@ class FTPhotoFilters: NSObject {
         return array
     }
     
-    public class func defaultFilter() -> CIFilter{
+    public class func defaultFilter() -> CIFilter?{
         
         let filterName: String = filterNames().first!
         return CIFilter.init(name: filterName)!
