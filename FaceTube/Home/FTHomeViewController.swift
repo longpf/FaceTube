@@ -25,6 +25,15 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let bt = FTCaptureButton.init(model: FTCaptureButtonMode.FTCaptureButtonModePhoto)
+        print("------------" + bt.isHighlighted.description)
+        bt.isHighlighted = true
+        print("------------" + bt.isHighlighted.description)
+        
+        
+        
         title = "FaceTube"
         view.backgroundColor = UIColor.backgroundColor()
         
