@@ -19,6 +19,7 @@ class FTCameraOverlayView: FTView {
     var captureButton: FTCaptureButton!     //拍摄按钮
     fileprivate weak var camera: FTCamera!  //弱引用一个camer来 方便 与 overlayview 的交互
     fileprivate var filterPickerView: FTFiltersPickerView!     //滤镜选择的pickerView
+    fileprivate var bottomMaskView: UIView! //底部的黑色半透明遮罩
     
     //MARK: ************************  life cycle  ************************
     
@@ -43,8 +44,12 @@ class FTCameraOverlayView: FTView {
         self.addSubview(self.captureButton)
 
         self.filterPickerView = FTFiltersPickerView()
-        self.filterPickerView.backgroundColor = UIColor.lightGray
         self.addSubview(self.filterPickerView)
+        
+        self.bottomMaskView = UIView()
+        self.bottomMaskView.backgroundColor = UIColor.black
+        self.bottomMaskView.alpha = 0.4
+        self.insertSubview(self.bottomMaskView, belowSubview: self.captureButton)
         
         self.toolbar.snp.makeConstraints { (make) in
             make.leading.equalTo(self.snp.leading)
@@ -55,7 +60,7 @@ class FTCameraOverlayView: FTView {
         
         self.captureButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.bottom.equalTo(self.snp.bottom).offset(-30)
+            make.bottom.equalTo(self.snp.bottom).offset(-15)
             make.size.equalTo(CGSize.init(width: 68, height: 68))
         }
         
@@ -64,6 +69,13 @@ class FTCameraOverlayView: FTView {
             make.trailing.equalTo(self.snp.trailing)
             make.bottom.equalTo(self.captureButton.snp.top).offset(-5)
             make.height.equalTo(40)
+        }
+        
+        self.bottomMaskView.snp.makeConstraints { (make) in
+            make.leading.equalTo(self.snp.leading)
+            make.trailing.equalTo(self.snp.trailing)
+            make.bottom.equalTo(self.snp.bottom)
+            make.top.equalTo(self.filterPickerView.snp.top).offset(-10)
         }
         
     }

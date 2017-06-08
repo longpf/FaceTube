@@ -63,14 +63,15 @@ class FTTabbarContrller: UITabBarController {
         homeViewController.tabBarItem = homeTabBarItem
         let homeNav: ScrollingNavigationController = ScrollingNavigationController.init(rootViewController: homeViewController)
         
-        
-        //record
-//        let recordViewController = FTVideoCaptureViewController()
-//        recordViewController.view.backgroundColor = UIColor.backgroundColor()
-//        let recordTabBarItem: UITabBarItem = UITabBarItem.init(title: nil, image: UIImage.init(named: "ft_tabbar_record"), selectedImage: UIImage.init(named: "ft_tabbar_record_hl"))
-//        recordTabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
-//        recordViewController.tabBarItem = recordTabBarItem
-//        let recordNav: ScrollingNavigationController = ScrollingNavigationController.init(rootViewController: recordViewController)
+        /*
+         //record
+         let recordViewController = FTVideoCaptureViewController()
+         recordViewController.view.backgroundColor = UIColor.backgroundColor()
+         let recordTabBarItem: UITabBarItem = UITabBarItem.init(title: nil, image: UIImage.init(named: "ft_tabbar_record"), selectedImage: UIImage.init(named: "ft_tabbar_record_hl"))
+         recordTabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0)
+         recordViewController.tabBarItem = recordTabBarItem
+         let recordNav: ScrollingNavigationController = ScrollingNavigationController.init(rootViewController: recordViewController)
+         */
         
         //capture
         let captureViewController = FTCaptureViewController()
@@ -88,33 +89,6 @@ class FTTabbarContrller: UITabBarController {
         
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -16,7 +16,7 @@ class FTLiveDetailViewController: FTViewController {
     fileprivate var backgroundImageView: UIImageView?
     fileprivate var visualEffectView: UIVisualEffectView?
     
-    //MARK: lift cycle
+    //MARK: ************************  life cycle  ************************
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,7 @@ class FTLiveDetailViewController: FTViewController {
         }
     }
     
-    //MAKR:private methods
+    //MARK: ************************  private methods  *****************
     
     func initPlayer() {
         
@@ -82,7 +82,7 @@ class FTLiveDetailViewController: FTViewController {
         }
     }
     
-    //MARK: response methods
+    //MARK: ************************  response methods  ***************
     
     func gotoBack(button: UIButton){
         _ = navigationController?.popViewController(animated: true)

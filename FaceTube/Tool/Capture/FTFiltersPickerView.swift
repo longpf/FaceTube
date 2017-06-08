@@ -60,7 +60,7 @@ extension FTFiltersPickerView: UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         let title: NSString = NSString.init(string: FTPhotoFilters.filterDisplayNames()[0])
-        return title.size(attributes: [NSFontAttributeName:UIFont.ft_regular(15)]).width+20
+        return title.size(attributes: [NSFontAttributeName:UIFont.ft_regular(17)]).width+10
     }
 }
 
@@ -72,7 +72,9 @@ extension FTFiltersPickerView: UIPickerViewDelegate
             label = lb
         }else{
             label = UILabel()
+            label.font = UIFont.ft_medium(17)
             label.textAlignment = .center
+            label.textColor = UIColor.white
         }
         label.text = FTPhotoFilters.filterDisplayNames()[row]
         label.transform = CGAffineTransform.init(rotationAngle: .pi/2.0)

@@ -22,7 +22,7 @@ class FTHomeLiveTableViewCell: UITableViewCell {
     var thumbImageView: UIImageView!
     var pointLabel: UILabel!
     
-    //MARK: lift cycle
+    //MARK: ************************  life cycle  ************************
     
     override func awakeFromNib() {
         super.awakeFromNib()

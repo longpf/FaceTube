@@ -21,7 +21,7 @@ class FTHomeViewController: FTViewController, ScrollingNavigationControllerDeleg
     var toolbar: UIToolbar!
     var selectedCell: FTHomeLiveTableViewCell?
     
-    //MARK:lift cycle
+    //MARK: ************************  life cycle  ************************
     
     override func viewDidLoad() {
         super.viewDidLoad()
