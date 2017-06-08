@@ -34,15 +34,15 @@ class FTCaptureButton: UIButton {
 
     private func initialize(){
     
-        self.backgroundColor = UIColor.green
+        self.backgroundColor = UIColor.clear
         self.tintColor = UIColor.clear
         
         let circleColor = self.model == FTCaptureButtonMode.FTCaptureButtonModeVideo ? UIColor.red : UIColor.white
         self.circleLayer = CALayer()
         self.circleLayer.backgroundColor = circleColor.cgColor
         self.circleLayer.bounds = self.bounds.insetBy(dx: 8, dy: 8)
-        self.circleLayer.position = CGPoint.init(x: self.bounds.minX, y: self.bounds.minY)
-        self.circleLayer.cornerRadius = self.bounds.width / 2.0
+        self.circleLayer.position = CGPoint.init(x: self.bounds.midX, y: self.bounds.midY)
+        self.circleLayer.cornerRadius = self.circleLayer.bounds.width / 2.0
         self.layer.addSublayer(self.circleLayer)
         
     }
@@ -80,6 +80,8 @@ class FTCaptureButton: UIButton {
                     scaleAnimation.toValue = NSNumber.init(value: 0.6)
                     radiusAnimation.toValue = NSNumber.init(value: Float(self.circleLayer.bounds.width / 4.0))
                 }else{
+                    scaleAnimation.fromValue = NSNumber.init(value: 0.6)
+                    radiusAnimation.fromValue = NSNumber.init(value: Float(self.circleLayer.bounds.width / 4.0))
                     scaleAnimation.toValue = NSNumber.init(value: 1)
                     radiusAnimation.toValue = NSNumber.init(value: Float(self.circleLayer.bounds.width / 2.0))
                 }
@@ -88,6 +90,9 @@ class FTCaptureButton: UIButton {
                 group.animations = [scaleAnimation,radiusAnimation]
                 group.beginTime = CACurrentMediaTime() + 0.2
                 group.duration = 0.35
+                group.fillMode = kCAFillModeBoth
+                group.autoreverses = false
+                group.isRemovedOnCompletion = false
                 
                 self.circleLayer.setValue(radiusAnimation, forKey: "radiusAnimation")
                 self.circleLayer.setValue(scaleAnimation, forKey: "scaleAnimation")
@@ -111,23 +116,6 @@ class FTCaptureButton: UIButton {
         
     }
     
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

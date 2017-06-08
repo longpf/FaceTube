@@ -10,8 +10,13 @@ import UIKit
 
 class FTCaptureViewController: FTViewController {
     
+    /// 预览view
     var previewView: FTPreviewView!
+    /// camer
     var camera: FTCamera!
+    /// overlayView上面放着事件按钮
+    var overlayView: FTCameraOverlayView!
+    
     
     //MARK: ************************  life cycle  ************************
     override func viewDidLoad() {
@@ -21,11 +26,17 @@ class FTCaptureViewController: FTViewController {
         
         let eaglContext = FTContextManager.shared.eaglContext
         self.previewView = FTPreviewView.init(frame: self.view.bounds, context: eaglContext!)
+//        self.previewView.filter = FTPhotoFilters.filterForDisplayName(displayName: "CIPhotoEffectMono")
         self.previewView.filter = FTPhotoFilters.defaultFilter()
-        self.camera = FTCamera()
-        self.camera.imageTarget = self.previewView
         self.previewView.coreImageContext = FTContextManager.shared.ciContext
         self.view.addSubview(self.previewView)
+        
+        self.camera = FTCamera()
+        self.camera.imageTarget = self.previewView
+        
+        self.overlayView = FTCameraOverlayView.init(camera: self.camera)
+        self.overlayView.frame = self.view.bounds
+        self.view.addSubview(self.overlayView)
         
         var error: NSError? = nil
         if self.camera.setupSession(&error){
@@ -33,6 +44,7 @@ class FTCaptureViewController: FTViewController {
         }else{
             print(error?.localizedDescription ?? "setupSession error")
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

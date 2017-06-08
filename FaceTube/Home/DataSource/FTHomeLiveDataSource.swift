@@ -38,8 +38,6 @@ class FTHomeLiveDataSource: FTDataSource {
         
         weak var wSelf: FTHomeLiveDataSource! = self;
         
-        
-        
         FTHTTPClient.getRequest(urlString: path, params: params, success: { (response) in
             
             let models = Mapper<FTHomeLiveModelResponse>().map(JSONObject: response)?.lives

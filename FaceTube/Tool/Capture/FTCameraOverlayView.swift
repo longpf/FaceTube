@@ -9,16 +9,22 @@
 import UIKit
 import SnapKit
 
+protocol FTCameraOverlayViewProtocol {
+    
+}
+
 class FTCameraOverlayView: FTView {
 
     var toolbar: FTVideoCaptureToolBar!
-    
+    var captureButton: FTCaptureButton!
+    fileprivate weak var camera: FTCamera!
     
     //MARK: ************************  life cycle  ************************
     
-    override init(frame: CGRect){
-        super.init(frame: frame)
-        initialize();
+    init(camera: FTCamera){
+        super.init(frame: CGRect.init())
+        self.camera = camera
+        initialize()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,9 +37,38 @@ class FTCameraOverlayView: FTView {
         self.toolbar = FTVideoCaptureToolBar()
         self.addSubview(self.toolbar)
         
+        self.captureButton = FTCaptureButton.init(model: FTCaptureButtonMode.FTCaptureButtonModeVideo)
+        self.captureButton.addTarget(self, action: #selector(FTCameraOverlayView.captureButtonClicked(button:)), for: .touchUpInside)
         
+        self.addSubview(self.captureButton)
+        
+        self.toolbar.snp.makeConstraints { (make) in
+            make.leading.equalTo(self.snp.leading)
+            make.trailing.equalTo(self.snp.trailing)
+            make.top.equalTo(self.snp.top)
+            make.height.equalTo(40)
+        }
+        
+        self.captureButton.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.snp.centerX)
+            make.bottom.equalTo(self.snp.bottom).offset(-30)
+            make.size.equalTo(CGSize.init(width: 68, height: 68))
+        }
         
     }
 
-
+    //MARK: ************************  response methods  ***************
+    
+    func captureButtonClicked(button: UIButton){
+        
+        if self.camera.recording {
+            self.camera.stopRecording()
+        }else{
+            self.camera.startRecording()
+        }
+        
+        button.isSelected = !button.isSelected
+    }
+    
+    
 }

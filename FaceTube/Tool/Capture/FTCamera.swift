@@ -28,6 +28,7 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
     override init() {
         
         cameraQueue = DispatchQueue.init(label: "com.facetube.camera")
+        recording = false
         
     }
     
@@ -226,11 +227,9 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
 
 extension FTCamera: FTMovieWriterDelegate {
     func didWriteMovieAtURL(outputURL: NSURL) {
-        UISaveVideoAtPathToSavedPhotosAlbum(outputURL.path!, self, Selector(("video:didFinishSavingWithError:contextInfo:")), nil)
+        UISaveVideoAtPathToSavedPhotosAlbum(outputURL.path!, self, #selector(video(videoPath:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     func video(videoPath: String, didFinishSavingWithError error: NSError, contextInfo info: UnsafeMutableRawPointer) {
-
-        
     }
 }

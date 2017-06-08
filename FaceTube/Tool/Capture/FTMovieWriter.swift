@@ -51,6 +51,7 @@ class FTMovieWriter: NSObject {
         self.colorSpace = CGColorSpaceCreateDeviceRGB()
         
         self.activeFilter = FTPhotoFilters.defaultFilter()
+//        self.activeFilter = FTPhotoFilters.filterForDisplayName(displayName: "CIPhotoEffectMono")
         self.onceToken_lifeCycle = true
         self.firstSample = true
         
@@ -162,7 +163,7 @@ class FTMovieWriter: NSObject {
             
             var filteredImage = self.activeFilter?.outputImage
             
-            if filteredImage != nil {
+            if filteredImage == nil {
                 filteredImage = sourceImage;
             }
             
@@ -210,8 +211,6 @@ class FTMovieWriter: NSObject {
                     
                 }
             }
-            
-            
         }
         
     }
