@@ -51,7 +51,6 @@ class FTMovieWriter: NSObject {
         self.colorSpace = CGColorSpaceCreateDeviceRGB()
         
         self.activeFilter = FTPhotoFilters.defaultFilter()
-//        self.activeFilter = FTPhotoFilters.filterForDisplayName(displayName: "CIPhotoEffectMono")
         self.onceToken_lifeCycle = true
         self.firstSample = true
         
@@ -85,7 +84,8 @@ class FTMovieWriter: NSObject {
             
             self.assetWriterVideoInput = AVAssetWriterInput.init(mediaType: AVMediaTypeVideo, outputSettings: self.videoSettings as? [String : Any])
             self.assetWriterVideoInput?.expectsMediaDataInRealTime = true //是否将输入处理成RealTime
-            self.assetWriterVideoInput?.transform = transformForDeviceOrientation(orientation: UIDevice.current.orientation)
+//            self.assetWriterVideoInput?.transform = transformForDeviceOrientation(orientation: UIDevice.current.orientation)
+            self.assetWriterVideoInput?.transform = transformWithDevice(devicePosition: .front)
             
             let attributes: [String : Any] = [
                                                 kCVPixelBufferPixelFormatTypeKey as String : kCVPixelFormatType_32BGRA,

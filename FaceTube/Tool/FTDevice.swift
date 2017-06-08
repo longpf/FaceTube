@@ -33,3 +33,22 @@ public func transformForDeviceOrientation(orientation: UIDeviceOrientation) -> C
     
 }
 
+/// 根据前后摄像头返回transform
+public func transformWithDevice(devicePosition: AVCaptureDevicePosition) -> CGAffineTransform {
+    
+    var transform = CGAffineTransform.identity
+    
+    switch devicePosition {
+    case .back:
+        transform = CGAffineTransform.init(rotationAngle: .pi/2.0)
+        break
+    case .front:
+        transform = CGAffineTransform.init(rotationAngle: .pi*1.5).scaledBy(x: -1.0, y: 1.0)
+        break
+    default:
+        break
+    }
+    return transform
+}
+
+
