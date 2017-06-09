@@ -117,6 +117,7 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
         return true
     }
     
+    /// 开启会话
     public func startSession(){
         
         cameraQueue.async {
@@ -126,6 +127,7 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
         }
     }
     
+    /// 停止会话
     public func stopSession() {
         
         if self.captureSession.isRunning {
@@ -134,18 +136,23 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
         
     }
     
+    /// 开始录制
     public func startRecording(){
         movieWriter?.startWriting()
         recording = true
     }
     
+    /// 停止录制
     public func stopRecording() {
         movieWriter?.stopWriting()
         recording = false
     }
     
+    
     //MARK:device
     
+    
+    ///根据摄像头前后位置获取捕获设备
     fileprivate func cameraWithPosition(position: AVCaptureDevicePosition) -> AVCaptureDevice? {
         
         let devices: [Any]! = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
@@ -160,11 +167,12 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
         return nil
     }
     
+    ///获取正在摄像头
     func activeCamera() -> AVCaptureDevice? {
         return activeVideoInput?.device
     }
     
-    
+    ///没在使用的摄像头
     func inactiveCamera() -> AVCaptureDevice? {
         var device: AVCaptureDevice? = nil;
         
@@ -179,15 +187,17 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
         return device;
     }
     
+    ///摄像头数量
     func cameraCount() -> NSInteger {
         return AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo).count
     }
     
+    ///是否可以切换摄像头
     func canSwitchCameras() -> Bool {
         return cameraCount() > 1
     }
     
-    
+    ///切换摄像头
     func switchCamers() -> Bool {
         
         if !canSwitchCameras(){
@@ -201,11 +211,62 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
         var toggleDeviceInput: AVCaptureDeviceInput?
         do{
             try toggleDeviceInput = AVCaptureDeviceInput.init(device: toggleDevice)
-        }catch{}
+        }catch{
+            return false
+        }
         
-        if (toggleDeviceInput != nil && captureSession.canAddInput(toggleDeviceInput)) {
-            captureSession.removeInput(activeVideoInput)
-            captureSession.addInput(toggleDeviceInput)
+        //        if (toggleDeviceInput != nil && captureSession.canAddInput(toggleDeviceInput)) {
+        //        }
+        captureSession.removeInput(activeVideoInput)
+        captureSession.addInput(toggleDeviceInput)
+        
+        activeVideoInput = toggleDeviceInput;
+        
+        return true
+    }
+    
+    ///正在使用的摄像头是否支持闪光灯
+    func activeCameraHasFlash() -> Bool {
+        let currentDevice = activeCamera()
+        return (currentDevice?.hasFlash)!
+    }
+    
+    ///正在使用的摄像头的打开或是关闭
+    func activeCameraSwitchFlash(on: Bool) -> Bool {
+        
+        if activeCameraHasFlash() {
+            
+            let currentDevice: AVCaptureDevice! = activeCamera()
+            
+            do {
+                
+                try currentDevice.lockForConfiguration()
+                
+                if on{
+                    
+                    if currentDevice.isTorchModeSupported(.on) {
+                        currentDevice.torchMode = .on
+                    }
+                    if currentDevice.isFlashModeSupported(.on){
+                        currentDevice.flashMode = .on
+                    }
+                    
+                }else{
+                    
+                    if currentDevice.isTorchModeSupported(.off){
+                        currentDevice.torchMode = .off
+                    }
+                    if currentDevice.isFlashModeSupported(.off){
+                        currentDevice.flashMode = .off
+                    }
+                }
+                currentDevice.unlockForConfiguration()
+                
+            }catch{
+                return false
+            }
+            
+            return true
         }
         
         return false

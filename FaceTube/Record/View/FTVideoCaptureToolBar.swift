@@ -13,7 +13,7 @@ import SnapKit
     
     func videoCaptureToolBarClose()
     func videoCaptureToolBarBeauty()
-    func videoCaptureToolBarFlash(on: Bool)
+    func videoCaptureToolBarFlash(on: Bool) -> Bool
     func videoCaptureToolBarSwitch()
     
 }
@@ -114,11 +114,13 @@ class FTVideoCaptureToolBar: FTView {
     
     func flashAction(button: UIButton){
         
-        
         let sel = #selector(FTVideoCaptureToolBarDelegate.videoCaptureToolBarFlash(on:))
         if (delegate != nil && (delegate?.responds(to: sel))!){
-            delegate?.videoCaptureToolBarFlash(on: FTVideoCaptureToolBar.on)
-            FTVideoCaptureToolBar.on = !FTVideoCaptureToolBar.on
+            let success = delegate?.videoCaptureToolBarFlash(on: FTVideoCaptureToolBar.on)
+            if success! {
+                FTVideoCaptureToolBar.on = !FTVideoCaptureToolBar.on
+            }
+            
         }
         
     }

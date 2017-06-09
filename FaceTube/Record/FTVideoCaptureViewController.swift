@@ -229,7 +229,7 @@ extension FTVideoCaptureViewController: FTVideoCaptureToolBarDelegate{
     }
     
     //闪光灯
-    func videoCaptureToolBarFlash(on: Bool){
+    func videoCaptureToolBarFlash(on: Bool) -> Bool{
         
         let currentDevice: AVCaptureDevice = currentVideoDeviceInput.device
         
@@ -261,10 +261,14 @@ extension FTVideoCaptureViewController: FTVideoCaptureToolBarDelegate{
                 
                 currentDevice.unlockForConfiguration()
                 
-            }catch{}
+            }catch{
+                return false
+            }
             
+            return true
         }
         
+        return false
     }
     
     //切换摄像头

@@ -37,6 +37,7 @@ class FTCameraOverlayView: FTView {
     fileprivate func initialize(){
         
         self.toolbar = FTVideoCaptureToolBar()
+        self.toolbar.delegate = self
         self.addSubview(self.toolbar)
         
         self.captureButton = FTCaptureButton.init(model: FTCaptureButtonMode.FTCaptureButtonModeVideo)
@@ -93,4 +94,32 @@ class FTCameraOverlayView: FTView {
         button.isSelected = !button.isSelected
     }
     
+}
+
+extension FTCameraOverlayView: FTVideoCaptureToolBarDelegate
+{
+    func videoCaptureToolBarClose(){
+        
+        
+    }
+    
+    func videoCaptureToolBarBeauty(){
+        
+    }
+    
+    //MARK:闪光灯
+    func videoCaptureToolBarFlash(on: Bool) -> Bool{
+        if self.camera.activeCameraHasFlash() {
+            return self.camera.activeCameraSwitchFlash(on: on)
+        }
+        return false
+    }
+    
+    //MARK:切换摄像头
+    func videoCaptureToolBarSwitch(){
+        if self.camera.canSwitchCameras() {
+            _ = self.camera.switchCamers()
+        }
+    }
+
 }
