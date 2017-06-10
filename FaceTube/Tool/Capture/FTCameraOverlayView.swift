@@ -9,7 +9,9 @@
 import UIKit
 import SnapKit
 
-protocol FTCameraOverlayViewProtocol {
+@objc protocol FTCameraOverlayViewProtocol: NSObjectProtocol {
+    
+    func close2back()
     
 }
 
@@ -20,6 +22,7 @@ class FTCameraOverlayView: FTView {
     fileprivate weak var camera: FTCamera!  //弱引用一个camer来 方便 与 overlayview 的交互
     fileprivate var filterPickerView: FTFiltersPickerView!     //滤镜选择的pickerView
     fileprivate var bottomMaskView: UIView! //底部的黑色半透明遮罩
+    var delegate: FTCameraOverlayViewProtocol?
     
     //MARK: ************************  life cycle  ************************
     
@@ -99,8 +102,10 @@ class FTCameraOverlayView: FTView {
 extension FTCameraOverlayView: FTVideoCaptureToolBarDelegate
 {
     func videoCaptureToolBarClose(){
-        
-        
+        let sel: Selector! = NSSelectorFromString("close2back")
+        if (delegate != nil && (delegate?.responds(to: sel))!){
+            delegate?.close2back()
+        }
     }
     
     func videoCaptureToolBarBeauty(){

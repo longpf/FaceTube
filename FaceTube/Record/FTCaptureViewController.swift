@@ -34,6 +34,7 @@ class FTCaptureViewController: FTViewController {
         
         self.overlayView = FTCameraOverlayView.init(camera: self.camera)
         self.overlayView.frame = self.view.bounds
+        self.overlayView.delegate = self
         self.view.addSubview(self.overlayView)
         
         var error: NSError? = nil
@@ -64,4 +65,14 @@ class FTCaptureViewController: FTViewController {
         return true;
     }
     
+}
+
+extension FTCaptureViewController: FTCameraOverlayViewProtocol
+{
+    func close2back() {
+        if let tabbarController = tabBarController as? FTTabbarContrller{
+            tabbarController.showTabBar(show: true, aniamtie: false)
+        }
+        tabBarController?.selectedIndex = 0
+    }
 }
