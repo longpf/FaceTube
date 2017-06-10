@@ -118,7 +118,15 @@ extension FTCameraOverlayView: FTVideoCaptureToolBarDelegate
     //MARK:切换摄像头
     func videoCaptureToolBarSwitch(){
         if self.camera.canSwitchCameras() {
-            _ = self.camera.switchCamers()
+            let success = self.camera.switchCamers()
+            if success
+            {
+                self.toolbar.flashButton.isEnabled = self.camera.activeCameraHasFlash()
+                
+                //切换摄像头闪光灯为关闭
+                self.toolbar.setFlash(on: false)
+                self.toolbar.flash_on = true
+            }
         }
     }
 

@@ -33,7 +33,6 @@ class FTMovieWriter: NSObject {
     fileprivate var dispatchQueue: DispatchQueue
     
     fileprivate weak var ciContext: CIContext!
-    fileprivate var activeFilter: CIFilter?
     
     /// 生命周期内执行一次的标记
     fileprivate var onceToken_lifeCycle: Bool!
@@ -50,7 +49,6 @@ class FTMovieWriter: NSObject {
         self.ciContext = FTContextManager.shared.ciContext
         self.colorSpace = CGColorSpaceCreateDeviceRGB()
         
-        self.activeFilter = FTPhotoFilters.defaultFilter()
         self.onceToken_lifeCycle = true
         self.firstSample = true
         
@@ -65,12 +63,6 @@ class FTMovieWriter: NSObject {
     //MARK: ************************  interface methods  ***************
     
     public func startWriting() {
-        
-        if self.onceToken_lifeCycle{
-            //注册监听
-            registeredObservers()
-            self.onceToken_lifeCycle = false
-        }
         
         self.dispatchQueue.async {
             
@@ -159,9 +151,9 @@ class FTMovieWriter: NSObject {
             
             let sourceImage = CIImage.init(cvPixelBuffer: imageBuffer!)
             
-            self.activeFilter?.setValue(sourceImage, forKey: kCIInputImageKey)
+            FTPhotoFilters.shared.selectedFilter.setValue(sourceImage, forKey: kCIInputImageKey)
             
-            var filteredImage = self.activeFilter?.outputImage
+            var filteredImage = FTPhotoFilters.shared.selectedFilter.outputImage
             
             if filteredImage == nil {
                 filteredImage = sourceImage;
@@ -216,11 +208,7 @@ class FTMovieWriter: NSObject {
     }
     
     //MARK: ************************  private methods  *****************
-    
-    private func registeredObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(filterChanged(notification:)), name: Notification.Name.FTFilterSelectionChangedNotification, object: nil)
-    }
-    
+
     private func outputURL() -> NSURL{
         
         let filePath = NSTemporaryDirectory().appendingFormat("/%@", FTVideoFileName)
@@ -233,13 +221,5 @@ class FTMovieWriter: NSObject {
         
         return url as NSURL
     }
-    
-    //MARK: ************************  response methods  ***************
-    @objc private func filterChanged(notification: Notification){
-        self.activeFilter = notification.object as? CIFilter;
-    }
-    
-
-
     
 }

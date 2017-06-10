@@ -26,7 +26,6 @@ class FTCaptureViewController: FTViewController {
         
         let eaglContext = FTContextManager.shared.eaglContext
         self.previewView = FTPreviewView.init(frame: self.view.bounds, context: eaglContext!)
-        self.previewView.filter = FTPhotoFilters.defaultFilter()
         self.previewView.coreImageContext = FTContextManager.shared.ciContext
         self.view.addSubview(self.previewView)
         

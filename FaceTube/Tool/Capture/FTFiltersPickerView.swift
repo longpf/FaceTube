@@ -66,6 +66,15 @@ extension FTFiltersPickerView: UIPickerViewDataSource
 
 extension FTFiltersPickerView: UIPickerViewDelegate
 {
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        let filterName = FTPhotoFilters.filterDisplayNames()[row];
+        let filter = FTPhotoFilters.filterForDisplayName(displayName: filterName)
+        FTPhotoFilters.shared.selectedFilter = filter        
+        
+    }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var label: UILabel
         if  let lb = view as? UILabel {

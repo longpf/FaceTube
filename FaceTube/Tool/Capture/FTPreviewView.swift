@@ -11,7 +11,6 @@ import GLKit
 /// 预览view
 class FTPreviewView: GLKView, FTImageTarget {
 
-    public var filter: CIFilter?
     public var coreImageContext: CIContext?
     fileprivate var drawableBounds: CGRect!
     fileprivate var devicePosition: AVCaptureDevicePosition!
@@ -36,7 +35,7 @@ class FTPreviewView: GLKView, FTImageTarget {
         self.drawableBounds.size.width = CGFloat(self.drawableWidth)
         self.drawableBounds.size.height = CGFloat(self.drawableHeight)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(filterChanged(notification:)), name: NSNotification.Name.FTFilterSelectionChangedNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(filterChanged(notification:)), name: NSNotification.Name.FTFilterSelectionChangedNotification, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -71,9 +70,9 @@ class FTPreviewView: GLKView, FTImageTarget {
     
     //MARK: ************************  response methods  ***************
     
-    func filterChanged(notification: Notification){
-        self.filter = notification.object as? CIFilter
-    }
+//    func filterChanged(notification: Notification){
+//        self.filter = (notification.object as? CIFilter)?.copy() as? CIFilter
+//    }
     
     
 }
@@ -83,8 +82,8 @@ extension FTPreviewView{
     func setImage(image: CIImage) {
         self.bindDrawable()
         
-        self.filter?.setValue(image, forKey: kCIInputImageKey)
-        let filteredImage = self.filter?.outputImage;
+        FTPhotoFilters.shared.selectedFilter.setValue(image, forKey: kCIInputImageKey)
+        let filteredImage = FTPhotoFilters.shared.selectedFilter.outputImage;
 
         if filteredImage != nil {
             self.coreImageContext?.draw(filteredImage!, in: CGRect.init(x: 0, y: 0, width: self.drawableWidth, height: self.drawableHeight), from: image.extent)
@@ -92,7 +91,7 @@ extension FTPreviewView{
             self.coreImageContext?.draw(image, in: CGRect.init(x: 0, y: 0, width: self.drawableWidth, height: self.drawableHeight), from: image.extent)
         }
         self.display()
-        self.filter?.setValue(nil, forKey: kCIInputImageKey)
+        FTPhotoFilters.shared.selectedFilter.setValue(nil, forKey: kCIInputImageKey)
     }
     
 }

@@ -246,6 +246,8 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
                     
                     if currentDevice.isTorchModeSupported(.on) {
                         currentDevice.torchMode = .on
+                    }else{
+                        return false
                     }
                     if currentDevice.isFlashModeSupported(.on){
                         currentDevice.flashMode = .on
@@ -255,6 +257,8 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
                     
                     if currentDevice.isTorchModeSupported(.off){
                         currentDevice.torchMode = .off
+                    }else{
+                        return false
                     }
                     if currentDevice.isFlashModeSupported(.off){
                         currentDevice.flashMode = .off

@@ -2,15 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "ft_record_beauty_off.pdf",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ft_record_beauty_off@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ft_record_beauty_off@3x.png",
       "scale" : "3x"
     }
   ],

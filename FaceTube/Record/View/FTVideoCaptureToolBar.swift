@@ -25,6 +25,7 @@ class FTVideoCaptureToolBar: FTView {
     var flashButton: UIButton!
     var cameraSwitchButton: UIButton!
     var delegate: FTVideoCaptureToolBarDelegate?;
+    var flash_on = false
     
     //MAKR : life cycle
     
@@ -54,6 +55,7 @@ class FTVideoCaptureToolBar: FTView {
         
         flashButton = UIButton()
         flashButton.setImage(UIImage.init(named: "ft_record_flash_off"), for: .normal)
+        flashButton.setImage(UIImage.init(named: "ft_record_flash_disable"), for: .disabled)
         flashButton.addTarget(self, action: #selector(flashAction(button:)), for: .touchUpInside)
         self.addSubview(flashButton)
         
@@ -89,6 +91,17 @@ class FTVideoCaptureToolBar: FTView {
         
     }
     
+    //MARK: ************************  interface methods  ***************
+    open func setFlash(on: Bool){
+        
+        if on {
+            flashButton.setImage(UIImage.init(named: "ft_record_flash_on"), for: .normal)
+        }else{
+            flashButton.setImage(UIImage.init(named: "ft_record_flash_off"), for: .normal)
+        }
+        
+    }
+    
     
     //MARK: response mehtods
     
@@ -110,15 +123,23 @@ class FTVideoCaptureToolBar: FTView {
         
     }
     
-    static var on = true
-    
     func flashAction(button: UIButton){
         
         let sel = #selector(FTVideoCaptureToolBarDelegate.videoCaptureToolBarFlash(on:))
         if (delegate != nil && (delegate?.responds(to: sel))!){
-            let success = delegate?.videoCaptureToolBarFlash(on: FTVideoCaptureToolBar.on)
+            let success = delegate?.videoCaptureToolBarFlash(on: flash_on)
             if success! {
-                FTVideoCaptureToolBar.on = !FTVideoCaptureToolBar.on
+                
+                //开启/关闭闪光灯成功后改变按钮的image
+                if flash_on {
+                    flashButton.setImage(UIImage.init(named: "ft_record_flash_on"), for: .normal)
+                }
+                else{
+                    flashButton.setImage(UIImage.init(named: "ft_record_flash_off"), for: .normal)
+                }
+                
+                flash_on = !flash_on
+                
             }
             
         }

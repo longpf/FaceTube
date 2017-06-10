@@ -11,6 +11,13 @@ import UIKit
 
 /// 滤镜类
 class FTPhotoFilters: NSObject {
+    
+    var selectedFilter: CIFilter!
+    
+    static let shared = FTPhotoFilters();
+    private override init() {
+        selectedFilter = FTPhotoFilters.defaultFilter()
+    }
 
     public class func filterNames() -> [String] {
         
@@ -25,7 +32,6 @@ class FTPhotoFilters: NSObject {
                 "CIPhotoEffectTransfer"
                 ]
     }
-    
     
     
     public class func filterDisplayNames() -> [String] {
@@ -55,6 +61,8 @@ class FTPhotoFilters: NSObject {
         }
         return nil
     }
+    
+    
     
     
 }
