@@ -278,6 +278,9 @@ class FTCamera: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate,AVCaptureA
     
     //MARK:AVCaptureVideoDataOutputSampleBufferDelegate
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        
+//        let sourceImage = FTSampleBufferProcessUtils.processSampleBuffer2CIImage(sampleBuffer)
+        
         movieWriter?.processSampleBuffer(sampleBuffer: sampleBuffer)
         
         if captureOutput == videoDataOutput{

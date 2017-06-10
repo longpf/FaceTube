@@ -9,8 +9,8 @@
 #ifndef FaceTube_Bridging_Header_h
 #define FaceTube_Bridging_Header_h
 
+#import "FTSampleBufferProcessUtils.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
 #import <MJRefresh/MJRefresh.h>
-
 
 #endif /* FaceTube_Bridging_Header_h */

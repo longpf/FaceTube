@@ -136,7 +136,7 @@ extension FTHomeViewController: UITableViewDelegate {
     }
 }
 
-extension FTHomeViewController: UINavigationControllerDelegate {
+extension FTHomeViewController {
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == UINavigationControllerOperation.push {

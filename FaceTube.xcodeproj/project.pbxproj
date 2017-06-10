@@ -65,6 +65,7 @@
 		D37216741E7128A00098A907 /* FTDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216731E7128A00098A907 /* FTDataSource.swift */; };
 		D37216771E7134B80098A907 /* FTHomeLiveDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */; };
 		D372167B1E71A9A60098A907 /* FTTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D372167A1E71A9A60098A907 /* FTTool.swift */; };
+		D39BC2611EEBC61100E6C4BA /* FTSampleBufferProcessUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = D39BC2601EEBC61000E6C4BA /* FTSampleBufferProcessUtils.mm */; };
 		D3D77E221E95FC8200A6440D /* FTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E211E95FC8200A6440D /* FTError.swift */; };
 		D3D77E661E9B1DDD00A6440D /* FTMovieWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E651E9B1DDD00A6440D /* FTMovieWriter.swift */; };
 		D3D77E681E9B28F400A6440D /* FTPhotoFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D77E671E9B28F400A6440D /* FTPhotoFilters.swift */; };
@@ -178,6 +179,8 @@
 		D37216731E7128A00098A907 /* FTDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTDataSource.swift; sourceTree = "<group>"; };
 		D37216761E7134B80098A907 /* FTHomeLiveDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTHomeLiveDataSource.swift; sourceTree = "<group>"; };
 		D372167A1E71A9A60098A907 /* FTTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTTool.swift; sourceTree = "<group>"; };
+		D39BC25F1EEBC61000E6C4BA /* FTSampleBufferProcessUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTSampleBufferProcessUtils.h; sourceTree = "<group>"; };
+		D39BC2601EEBC61000E6C4BA /* FTSampleBufferProcessUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FTSampleBufferProcessUtils.mm; sourceTree = "<group>"; };
 		D3D77E211E95FC8200A6440D /* FTError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTError.swift; sourceTree = "<group>"; };
 		D3D77E651E9B1DDD00A6440D /* FTMovieWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTMovieWriter.swift; sourceTree = "<group>"; };
 		D3D77E671E9B28F400A6440D /* FTPhotoFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPhotoFilters.swift; sourceTree = "<group>"; };
@@ -434,6 +437,15 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		D39BC25E1EEBC5B800E6C4BA /* OC */ = {
+			isa = PBXGroup;
+			children = (
+				D39BC25F1EEBC61000E6C4BA /* FTSampleBufferProcessUtils.h */,
+				D39BC2601EEBC61000E6C4BA /* FTSampleBufferProcessUtils.mm */,
+			);
+			path = OC;
+			sourceTree = "<group>";
+		};
 		D3E83BCF1E82AA4900AAABB9 /* Record */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +461,7 @@
 		D3F9AE3E1E8397EA0053B543 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
+				D39BC25E1EEBC5B800E6C4BA /* OC */,
 				D33B8A751E94EF3500592F5C /* FTCamera.swift */,
 				D3FA39841E85063600BA5279 /* FTFocusView.swift */,
 				D33B8A731E94D1B500592F5C /* FTContextManager.swift */,
@@ -691,6 +704,7 @@
 				D372167B1E71A9A60098A907 /* FTTool.swift in Sources */,
 				D325D5DF1E66C6B200CB9EEF /* FTTabbarContrller.swift in Sources */,
 				D31B090E1EA757B200CAAA34 /* FTCaptureButton.swift in Sources */,
+				D39BC2611EEBC61100E6C4BA /* FTSampleBufferProcessUtils.mm in Sources */,
 				D3ED30511E9E338300BBAD55 /* FTImageTarget.swift in Sources */,
 				D334D2711E79177400F67BAA /* FTLiveDetailViewController.swift in Sources */,
 				D37216691E70F5600098A907 /* FTMutableDictionary.swift in Sources */,

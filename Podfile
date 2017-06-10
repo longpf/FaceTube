@@ -11,5 +11,6 @@ target 'FaceTube' do
     pod "ObjectMapper"
     pod "Kingfisher"
     pod "AMScrollingNavbar"
+    pod "OpenCV2"
     
 end
